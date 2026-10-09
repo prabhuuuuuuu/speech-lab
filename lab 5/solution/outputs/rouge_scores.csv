@@ -1,0 +1,19 @@
+method,family,type,words,rouge1_p,rouge1_r,rouge1_f,rouge2_p,rouge2_r,rouge2_f,rougeL_p,rougeL_r,rougeL_f
+Lead baseline (first sentence of each paragraph),baseline,extractive,68,0.5294,0.48,0.5035,0.3284,0.2973,0.3121,0.4853,0.44,0.4615
+Frequency-based,statistical,extractive,83,0.2738,0.3067,0.2893,0.0964,0.1081,0.1019,0.2024,0.2267,0.2138
+TF-IDF,statistical,extractive,66,0.4179,0.3733,0.3944,0.2121,0.1892,0.2,0.3433,0.3067,0.3239
+TextRank,statistical,extractive,76,0.2763,0.28,0.2781,0.0933,0.0946,0.094,0.2105,0.2133,0.2119
+LexRank,statistical,extractive,82,0.3293,0.36,0.3439,0.1605,0.1757,0.1677,0.2683,0.2933,0.2803
+Feature-based scoring,statistical,extractive,75,0.4605,0.4667,0.4636,0.2533,0.2568,0.255,0.3684,0.3733,0.3709
+RNN extractive (hierarchical RNN),neural (scratch),extractive,74,0.4933,0.4933,0.4933,0.2838,0.2838,0.2838,0.4133,0.4133,0.4133
+LSTM extractive (hierarchical BiLSTM),neural (scratch),extractive,82,0.4819,0.5333,0.5063,0.2683,0.2973,0.2821,0.4096,0.4533,0.4304
+Self-attention extractive,neural (scratch),extractive,70,0.4648,0.44,0.4521,0.3,0.2838,0.2917,0.4366,0.4133,0.4247
+RNN encoder-decoder (abstractive),neural (scratch),abstractive,31,0.9062,0.3867,0.5421,0.6774,0.2838,0.4,0.9062,0.3867,0.5421
+LSTM encoder-decoder (abstractive),neural (scratch),abstractive,39,0.9,0.48,0.6261,0.641,0.3378,0.4425,0.85,0.4533,0.5913
+Seq2Seq + Bahdanau attention (abstractive),neural (scratch),abstractive,40,0.9024,0.4933,0.6379,0.7,0.3784,0.4912,0.9024,0.4933,0.6379
+Transformer encoder-decoder (abstractive),neural (scratch),abstractive,39,0.95,0.5067,0.6609,0.7179,0.3784,0.4956,0.95,0.5067,0.6609
+BERT extractive (K-Means on BERT embeddings),pre-trained,extractive,74,0.24,0.24,0.24,0.0541,0.0541,0.0541,0.1467,0.1467,0.1467
+SBERT extractive (K-Means on SBERT embeddings),pre-trained,extractive,66,0.4328,0.3867,0.4085,0.2576,0.2297,0.2429,0.3582,0.32,0.338
+"BART (bart-large-cnn, abstractive)",pre-trained,abstractive,61,0.4516,0.3733,0.4088,0.2787,0.2297,0.2519,0.4355,0.36,0.3942
+"PEGASUS (pegasus-cnn_dailymail, abstractive)",pre-trained,abstractive,54,0.4151,0.2933,0.3438,0.25,0.1757,0.2063,0.3774,0.2667,0.3125
+"T5 (t5-small, abstractive)",pre-trained,abstractive,46,0.3478,0.2133,0.2645,0.2222,0.1351,0.1681,0.3261,0.2,0.2479

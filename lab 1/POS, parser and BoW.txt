@@ -1,0 +1,26 @@
+Take an english text and speech as a input sample and perform the following
+
+ A) POS Tagging:
+Tokenize the sentence and audio.  Assign an appropriate Part-of-Speech (POS) tag to each word. Identify the nouns, verbs, adjectives, adverbs, conjunctions, and other grammatical categories.
+
+B) Parsing:
+Construct and visualize a constituency parse tree  and dependency parse tree for the sentence and the audio file. Analyze how the two clauses are related.
+
+C) Bag of Words:
+Create a Bag of Words representation for the sentence/audio. Display:
+
+· The vocabulary
+
+· The corresponding word-frequency vector
+
+D) Analysis and Interpretation:
+Based on the POS tags, parse structure, and BoW representation, discuss:
+
+· Which information is preserved by BoW?
+
+· Which linguistic information is lost by BoW?
+
+· Why can parsing provide information that BoW cannot?
+
+E) Higher-Order Challenge:
+Modify the input text sentence by changing the word order

@@ -1,0 +1,39 @@
+A university receives a collection of lengthy student-feedback reports containing information about teaching quality, infrastructure, laboratory facilities, faculty interaction and student satisfaction. You are given a document containing multiple paragraphs of student feedback. Develop an NLP-based summarization system that produces a concise summary of the document. Your system must:
+
+a) Preprocess the input document by performing sentence segmentation, tokenization and removal of unnecessary text.
+
+b) Implement all graph/statistical-based approach to identify the most important sentences and generate an extractive summary.
+
+1. Frequency-based summarization
+
+2. TF-IDF-based summarization
+
+3. TextRank
+
+4. LexRank
+
+5. Feature-based sentence scoring
+
+ 
+
+c) Implement all deep-learning-based approach to generate an extractive and abstractive summary.
+
+1. RNN-Based Summarization
+
+2. LSTM for Text Summarization
+
+3. Encoder–Decoder / Seq2Seq Model
+
+4. Self Attention Mechanism
+
+5. Transformer-Based Summarization
+
+6. BERT for Extractive Summarization
+
+7. BART
+
+8. PEGASUS
+
+9. T5
+
+d) Compare summaries of different techniques with a reference summary using ROUGE-1, ROUGE-2 and ROUGE-L.

@@ -1,0 +1,1 @@
+Design and implement a Recurrent Neural Network (RNN)-based Named Entity Recognition (NER) system that identifies named entities from sentences, evaluates its performance using suitable sequence-labeling metrics, and analyzes the effect of model and preprocessing choices on NER performance.

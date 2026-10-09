@@ -1,0 +1,19 @@
+Build an NER system for speech-to-text transcripts of a voice assistant. Given a small annotated training dataset, identify PERSON, LOCATION, ORGANIZATION, and DATE entities. For example: “Book a flight for Dr Arun Kumar from Chennai to Singapore on 15 September.”
+
+1. Convert the sentences into BIO tags.
+
+2. Create word-level features/embeddings.
+
+3. Implement a CRF-based NER model.
+
+4. Implement Viterbi decoding to obtain the best tag sequence.
+
+5. Implement an LSTM-based NER model.
+
+6. Test both models on unseen speech transcripts.
+
+7. Compare the predictions and evaluation metrics.
+
+8. Analyze one case where the models produce different results.
+
+9. Evaluate the model built using appropriate metrices

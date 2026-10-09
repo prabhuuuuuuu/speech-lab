@@ -1,0 +1,137 @@
+A news classification system needs to represent words as numerical vectors. The training corpus contains both common words and several rare/unseen words such as:  "The students are learning artificial intelligence and machinelearning techniques. The students use machine-learning algorithms for intelligent applications." Your task is to investigate how Word2Vec, GloVe, and FastText represent words and determine which embedding technique is most suitable for this corpus.
+
+ 
+
+Part A – Corpus Preparation
+
+Create a corpus containing at least 20–30 sentences related to one domain such as:
+
+l Artificial Intelligence
+
+l Healthcare
+
+l Cybersecurity
+
+l Agriculture
+
+l E-commerce
+
+Perform:
+
+l Tokenization
+
+l Lowercasing
+
+l Removal of unnecessary punctuation
+
+l Optional stop-word removal
+
+Preserve some morphologically related words such as: learn, learning, learned, learner and are/compound words such as: machine-learning, cybersecurity, healthcare
+
+ 
+
+Part B – Word2Vec
+
+Implement Word2Vec using both CBOW and Skip-gram. Experiment with at least two different window sizes, for example: window = 2 and window = 4
+
+For each model:
+
+l Train the embeddings.
+
+l Display the vector representation of selected words.
+
+l Find the 5 most similar words for: learning, machine, intelligence, student.
+
+l Compare CBOW and Skip-gram results.
+
+ 
+
+Part C – GloVe
+
+Implement or use a GloVe implementation to obtain word vectors from the same corpus. Analyze:
+
+l Similar words obtained for the selected words.
+
+l Whether words occurring in similar global contexts are represented closely.
+
+l Differences between GloVe and Word2Vec similarity results.
+
+ 
+
+Part D – FastText
+
+Train a FastText model on the same corpus. Test the following groups: learn, learning, learned, learner
+
+Then test a word that does not occur in the training corpus, for example: machine-learning
+
+Determine whether FastText can generate an embedding for the unseen word.
+
+ 
+
+Part E – Similarity Analysis
+
+Calculate cosine similarity for the following word pairs:
+
+Word Pair
+
+Word2Vec
+
+GloVe
+
+FastText
+
+learning – learner
+
+ 
+
+ 
+
+ 
+
+machine – intelligence
+
+ 
+
+ 
+
+ 
+
+student – learner
+
+ 
+
+ 
+
+ 
+
+artificial – intelligence
+
+ 
+
+ 
+
+ 
+
+learn – learning
+
+ 
+
+ 
+
+ 
+
+ 
+
+Identify:
+
+l Which model produces the highest similarity for morphologically related words?
+
+l Which model handles rare/unseen words better?
+
+l Which model produces the most meaningful semantic relationships?
+
+ 
+
+Part F – Visualization
+
+Reduce the embeddings of at least 10 selected words to 2 dimensions using PCA or t-SNE.

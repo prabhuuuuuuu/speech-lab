@@ -1,0 +1,28 @@
+# Speech / NLP lab - all labs (1-6)
+# Install:  pip install -r requirements.txt
+# CPU-only PyTorch is enough. If you prefer the small CPU wheel:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+numpy
+scikit-learn
+matplotlib
+networkx
+
+# Lab 1 (POS, parsing, BoW)
+nltk
+spacy                 # then: python -m spacy download en_core_web_sm
+SpeechRecognition     # audio -> text (uses Google Web Speech API, needs internet)
+gTTS
+
+# Lab 2 (Word2Vec / FastText)
+gensim
+
+# Labs 3, 4, 5 (neural models)
+torch
+seqeval               # optional: library cross-check of NER metrics
+sklearn-crfsuite      # optional: reference CRF in Lab 3
+
+# Labs 5, 6 (pre-trained Transformers)
+transformers
+sentencepiece         # PEGASUS / T5 tokenizers
+protobuf

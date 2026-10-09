@@ -1,0 +1,401 @@
+{
+ "triples": [
+  [
+   "India",
+   "capital",
+   "New Delhi"
+  ],
+  [
+   "India",
+   "currency",
+   "Indian Rupee"
+  ],
+  [
+   "France",
+   "capital",
+   "Paris"
+  ],
+  [
+   "France",
+   "currency",
+   "Euro"
+  ],
+  [
+   "Japan",
+   "capital",
+   "Tokyo"
+  ],
+  [
+   "Japan",
+   "currency",
+   "Japanese Yen"
+  ],
+  [
+   "Poland",
+   "capital",
+   "Warsaw"
+  ],
+  [
+   "Germany",
+   "capital",
+   "Berlin"
+  ],
+  [
+   "Tamil Nadu",
+   "capital",
+   "Chennai"
+  ],
+  [
+   "Tamil Nadu",
+   "located_in",
+   "India"
+  ],
+  [
+   "Karnataka",
+   "capital",
+   "Bengaluru"
+  ],
+  [
+   "Karnataka",
+   "located_in",
+   "India"
+  ],
+  [
+   "West Bengal",
+   "capital",
+   "Kolkata"
+  ],
+  [
+   "West Bengal",
+   "located_in",
+   "India"
+  ],
+  [
+   "California",
+   "located_in",
+   "United States"
+  ],
+  [
+   "New Delhi",
+   "located_in",
+   "India"
+  ],
+  [
+   "Chennai",
+   "located_in",
+   "Tamil Nadu"
+  ],
+  [
+   "Vellore",
+   "located_in",
+   "Tamil Nadu"
+  ],
+  [
+   "Madurai",
+   "located_in",
+   "Tamil Nadu"
+  ],
+  [
+   "Rameswaram",
+   "located_in",
+   "Tamil Nadu"
+  ],
+  [
+   "Tiruchirappalli",
+   "located_in",
+   "Tamil Nadu"
+  ],
+  [
+   "Bengaluru",
+   "located_in",
+   "Karnataka"
+  ],
+  [
+   "Kolkata",
+   "located_in",
+   "West Bengal"
+  ],
+  [
+   "Kharagpur",
+   "located_in",
+   "West Bengal"
+  ],
+  [
+   "Paris",
+   "located_in",
+   "France"
+  ],
+  [
+   "Tokyo",
+   "located_in",
+   "Japan"
+  ],
+  [
+   "Warsaw",
+   "located_in",
+   "Poland"
+  ],
+  [
+   "Berlin",
+   "located_in",
+   "Germany"
+  ],
+  [
+   "Ulm",
+   "located_in",
+   "Germany"
+  ],
+  [
+   "Mountain View",
+   "located_in",
+   "California"
+  ],
+  [
+   "VIT University",
+   "located_in",
+   "Vellore"
+  ],
+  [
+   "VIT University",
+   "founded_in",
+   "1984"
+  ],
+  [
+   "VIT University",
+   "founded_by",
+   "G. Viswanathan"
+  ],
+  [
+   "IIT Madras",
+   "located_in",
+   "Chennai"
+  ],
+  [
+   "IIT Madras",
+   "founded_in",
+   "1959"
+  ],
+  [
+   "IIT Kharagpur",
+   "located_in",
+   "Kharagpur"
+  ],
+  [
+   "IIT Kharagpur",
+   "founded_in",
+   "1951"
+  ],
+  [
+   "Infosys",
+   "founded_by",
+   "N. R. Narayana Murthy"
+  ],
+  [
+   "Infosys",
+   "founded_in",
+   "1981"
+  ],
+  [
+   "Infosys",
+   "headquartered_in",
+   "Bengaluru"
+  ],
+  [
+   "Infosys",
+   "ceo",
+   "Salil Parekh"
+  ],
+  [
+   "Google",
+   "founded_by",
+   "Larry Page"
+  ],
+  [
+   "Google",
+   "founded_by",
+   "Sergey Brin"
+  ],
+  [
+   "Google",
+   "founded_in",
+   "1998"
+  ],
+  [
+   "Google",
+   "headquartered_in",
+   "Mountain View"
+  ],
+  [
+   "Google",
+   "ceo",
+   "Sundar Pichai"
+  ],
+  [
+   "ISRO",
+   "headquartered_in",
+   "Bengaluru"
+  ],
+  [
+   "ISRO",
+   "founded_in",
+   "1969"
+  ],
+  [
+   "ISRO",
+   "founded_by",
+   "Vikram Sarabhai"
+  ],
+  [
+   "Sundar Pichai",
+   "born_in",
+   "Madurai"
+  ],
+  [
+   "Sundar Pichai",
+   "educated_at",
+   "IIT Kharagpur"
+  ],
+  [
+   "A. P. J. Abdul Kalam",
+   "born_in",
+   "Rameswaram"
+  ],
+  [
+   "A. P. J. Abdul Kalam",
+   "born_on",
+   "15 October 1931"
+  ],
+  [
+   "A. P. J. Abdul Kalam",
+   "occupation",
+   "aerospace scientist"
+  ],
+  [
+   "A. P. J. Abdul Kalam",
+   "position",
+   "President of India"
+  ],
+  [
+   "Marie Curie",
+   "born_in",
+   "Warsaw"
+  ],
+  [
+   "Marie Curie",
+   "field",
+   "physics and chemistry"
+  ],
+  [
+   "Marie Curie",
+   "award",
+   "Nobel Prize in Physics"
+  ],
+  [
+   "Marie Curie",
+   "award",
+   "Nobel Prize in Chemistry"
+  ],
+  [
+   "C. V. Raman",
+   "born_in",
+   "Tiruchirappalli"
+  ],
+  [
+   "C. V. Raman",
+   "award",
+   "Nobel Prize in Physics"
+  ],
+  [
+   "C. V. Raman",
+   "known_for",
+   "Raman effect"
+  ],
+  [
+   "Albert Einstein",
+   "born_in",
+   "Ulm"
+  ],
+  [
+   "Albert Einstein",
+   "known_for",
+   "theory of relativity"
+  ],
+  [
+   "Albert Einstein",
+   "award",
+   "Nobel Prize in Physics"
+  ],
+  [
+   "Vikram Sarabhai",
+   "occupation",
+   "physicist"
+  ],
+  [
+   "Chandrayaan-3",
+   "launched_by",
+   "ISRO"
+  ],
+  [
+   "Chandrayaan-3",
+   "launch_date",
+   "14 July 2023"
+  ],
+  [
+   "Python",
+   "created_by",
+   "Guido van Rossum"
+  ],
+  [
+   "Python",
+   "released_in",
+   "1991"
+  ]
+ ],
+ "entity_types": {
+  "India": "country",
+  "France": "country",
+  "Japan": "country",
+  "Poland": "country",
+  "Germany": "country",
+  "United States": "country",
+  "Tamil Nadu": "state",
+  "Karnataka": "state",
+  "West Bengal": "state",
+  "California": "state",
+  "New Delhi": "city",
+  "Paris": "city",
+  "Tokyo": "city",
+  "Warsaw": "city",
+  "Berlin": "city",
+  "Chennai": "city",
+  "Bengaluru": "city",
+  "Kolkata": "city",
+  "Vellore": "city",
+  "Madurai": "city",
+  "Rameswaram": "city",
+  "Tiruchirappalli": "city",
+  "Kharagpur": "city",
+  "Ulm": "city",
+  "Mountain View": "city",
+  "VIT University": "organization",
+  "IIT Madras": "organization",
+  "IIT Kharagpur": "organization",
+  "Infosys": "organization",
+  "Google": "organization",
+  "ISRO": "organization",
+  "Sundar Pichai": "person",
+  "A. P. J. Abdul Kalam": "person",
+  "Marie Curie": "person",
+  "C. V. Raman": "person",
+  "Albert Einstein": "person",
+  "Vikram Sarabhai": "person",
+  "G. Viswanathan": "person",
+  "N. R. Narayana Murthy": "person",
+  "Salil Parekh": "person",
+  "Larry Page": "person",
+  "Sergey Brin": "person",
+  "Guido van Rossum": "person",
+  "Chandrayaan-3": "mission",
+  "Python": "language"
+ }
+}

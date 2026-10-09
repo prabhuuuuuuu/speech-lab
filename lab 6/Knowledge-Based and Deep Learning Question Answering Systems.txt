@@ -1,0 +1,5 @@
+Develop a Question Answering (Q&A) system using (i) a knowledge-based approach and (ii) a deep learning-based approach, and compare their performance using suitable evaluation metrics.
+
+Construct a small knowledge base for answering factual questions.
+Implement retrieval and answer extraction from structured knowledge.
+Build a deep-learning-based extractive Q&A system using a pretrained models
