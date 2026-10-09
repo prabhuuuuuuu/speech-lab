@@ -1,0 +1,1857 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title></title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fa;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.header {
+
+    height: 90px;
+
+    padding: 20px 30px;
+
+    background: white;
+
+    border-bottom:
+        1px solid #ddd;
+
+    position: relative;
+}
+
+.header h1 {
+
+    margin: 0 0 6px 0;
+
+    font-size: 25px;
+}
+
+.header p {
+
+    margin: 0;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+.instructions {
+
+    position: absolute;
+
+    right: 30px;
+
+    top: 25px;
+
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    background: #f0f2f5;
+
+    color: #555;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   TREE AREA
+   ===================================================== */
+
+.tree-container {
+
+    width: 100%;
+
+    height:
+        calc(100% - 90px);
+
+    overflow: auto;
+
+    padding: 25px;
+}
+
+svg {
+
+    display: block;
+
+    background: white;
+
+    border:
+        1px solid #d5d5d5;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 12px
+        rgba(0,0,0,0.08);
+}
+
+
+/* =====================================================
+   EDGES
+   ===================================================== */
+
+.edge {
+
+    stroke: #333;
+
+    stroke-width: 2.5;
+
+    fill: none;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   ARROW
+   ===================================================== */
+
+marker {
+
+    overflow: visible;
+}
+
+
+/* =====================================================
+   DEPENDENCY LABEL
+   ===================================================== */
+
+.dependency-label {
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    fill: #555;
+
+    text-anchor: middle;
+
+    pointer-events: none;
+
+    paint-order: stroke;
+
+    stroke: white;
+
+    stroke-width: 5px;
+
+    stroke-linejoin: round;
+}
+
+
+/* =====================================================
+   NODES
+   ===================================================== */
+
+.node {
+
+    cursor: grab;
+}
+
+.node:active {
+
+    cursor: grabbing;
+}
+
+.node circle {
+
+    fill: white;
+
+    stroke: #222;
+
+    stroke-width: 2.5;
+}
+
+.node:hover circle {
+
+    fill: #f1f5f9;
+
+    stroke-width: 3.5;
+}
+
+
+/* =====================================================
+   ROOT
+   ===================================================== */
+
+.root-node circle {
+
+    fill: #e8f0ff;
+
+    stroke: #1d4ed8;
+
+    stroke-width: 4;
+}
+
+
+/* =====================================================
+   NODE TEXT
+   ===================================================== */
+
+.word {
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    text-anchor: middle;
+
+    dominant-baseline: middle;
+
+    pointer-events: none;
+}
+
+.pos {
+
+    font-size: 11px;
+
+    fill: #666;
+
+    text-anchor: middle;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   SELECTED NODE
+   ===================================================== */
+
+.selected circle {
+
+    stroke: #dc2626;
+
+    stroke-width: 4;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ===================================================
+     HEADER
+     =================================================== -->
+
+<div class="header">
+
+    <h1>
+        
+    </h1>
+
+    <p>
+
+
+
+    </p>
+
+
+
+</div>
+
+
+<!-- ===================================================
+     TREE
+     =================================================== -->
+
+<div class="tree-container">
+
+<svg
+    id="tree"
+    width="1400"
+    height="950"
+    viewBox="0 0 1400 950"
+>
+
+    <defs>
+
+        <marker
+            id="arrow"
+            markerWidth="10"
+            markerHeight="10"
+            refX="8"
+            refY="4"
+            orient="auto"
+            markerUnits="strokeWidth"
+        >
+
+            <path
+                d="M0,0 L0,8 L9,4 Z"
+                fill="#333"
+            />
+
+        </marker>
+
+    </defs>
+
+
+    <!-- EDGES -->
+
+    <g id="edges">
+
+        
+            <line
+                id="edge-2-0"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-2-0"
+                class="dependency-label"
+            >
+                det
+            </text>
+            
+            <line
+                id="edge-2-1"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-2-1"
+                class="dependency-label"
+            >
+                amod
+            </text>
+            
+            <line
+                id="edge-2-3"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-2-3"
+                class="dependency-label"
+            >
+                prep
+            </text>
+            
+            <line
+                id="edge-3-5"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-3-5"
+                class="dependency-label"
+            >
+                pobj
+            </text>
+            
+            <line
+                id="edge-5-4"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-5-4"
+                class="dependency-label"
+            >
+                amod
+            </text>
+            
+            <line
+                id="edge-6-2"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-6-2"
+                class="dependency-label"
+            >
+                nsubj
+            </text>
+            
+            <line
+                id="edge-6-7"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-6-7"
+                class="dependency-label"
+            >
+                punct
+            </text>
+            
+            <line
+                id="edge-9-8"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-9-8"
+                class="dependency-label"
+            >
+                nsubj
+            </text>
+            
+            <line
+                id="edge-9-10"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-9-10"
+                class="dependency-label"
+            >
+                dobj
+            </text>
+            
+            <line
+                id="edge-9-12"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-9-12"
+                class="dependency-label"
+            >
+                xcomp
+            </text>
+            
+            <line
+                id="edge-9-16"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-9-16"
+                class="dependency-label"
+            >
+                punct
+            </text>
+            
+            <line
+                id="edge-12-11"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-12-11"
+                class="dependency-label"
+            >
+                aux
+            </text>
+            
+            <line
+                id="edge-12-13"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-12-13"
+                class="dependency-label"
+            >
+                prt
+            </text>
+            
+            <line
+                id="edge-12-15"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-12-15"
+                class="dependency-label"
+            >
+                dobj
+            </text>
+            
+            <line
+                id="edge-15-14"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-15-14"
+                class="dependency-label"
+            >
+                det
+            </text>
+            
+            <line
+                id="edge-19-17"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-19-17"
+                class="dependency-label"
+            >
+                det
+            </text>
+            
+            <line
+                id="edge-19-18"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-19-18"
+                class="dependency-label"
+            >
+                amod
+            </text>
+            
+            <line
+                id="edge-20-19"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-20-19"
+                class="dependency-label"
+            >
+                nsubj
+            </text>
+            
+            <line
+                id="edge-20-21"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-20-21"
+                class="dependency-label"
+            >
+                dobj
+            </text>
+            
+            <line
+                id="edge-20-24"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-20-24"
+                class="dependency-label"
+            >
+                punct
+            </text>
+            
+            <line
+                id="edge-21-22"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-21-22"
+                class="dependency-label"
+            >
+                cc
+            </text>
+            
+            <line
+                id="edge-21-23"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-21-23"
+                class="dependency-label"
+            >
+                conj
+            </text>
+            
+            <line
+                id="edge-27-25"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-27-25"
+                class="dependency-label"
+            >
+                det
+            </text>
+            
+            <line
+                id="edge-27-26"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-27-26"
+                class="dependency-label"
+            >
+                compound
+            </text>
+            
+            <line
+                id="edge-28-27"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-28-27"
+                class="dependency-label"
+            >
+                nsubj
+            </text>
+            
+            <line
+                id="edge-28-29"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-28-29"
+                class="dependency-label"
+            >
+                acomp
+            </text>
+            
+            <line
+                id="edge-28-30"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-28-30"
+                class="dependency-label"
+            >
+                prep
+            </text>
+            
+            <line
+                id="edge-28-32"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-28-32"
+                class="dependency-label"
+            >
+                punct
+            </text>
+            
+            <line
+                id="edge-30-31"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-30-31"
+                class="dependency-label"
+            >
+                pobj
+            </text>
+            
+            <line
+                id="edge-34-33"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-34-33"
+                class="dependency-label"
+            >
+                compound
+            </text>
+            
+            <line
+                id="edge-35-34"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-35-34"
+                class="dependency-label"
+            >
+                compound
+            </text>
+            
+            <line
+                id="edge-36-35"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-36-35"
+                class="dependency-label"
+            >
+                nsubj
+            </text>
+            
+            <line
+                id="edge-36-38"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-36-38"
+                class="dependency-label"
+            >
+                attr
+            </text>
+            
+            <line
+                id="edge-36-39"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-36-39"
+                class="dependency-label"
+            >
+                punct
+            </text>
+            
+            <line
+                id="edge-38-37"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-38-37"
+                class="dependency-label"
+            >
+                poss
+            </text>
+            
+            <line
+                id="edge-42-40"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-42-40"
+                class="dependency-label"
+            >
+                det
+            </text>
+            
+            <line
+                id="edge-42-41"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-42-41"
+                class="dependency-label"
+            >
+                amod
+            </text>
+            
+            <line
+                id="edge-43-42"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-43-42"
+                class="dependency-label"
+            >
+                nsubj
+            </text>
+            
+            <line
+                id="edge-43-47"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-43-47"
+                class="dependency-label"
+            >
+                attr
+            </text>
+            
+            <line
+                id="edge-43-48"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-43-48"
+                class="dependency-label"
+            >
+                punct
+            </text>
+            
+            <line
+                id="edge-46-45"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-46-45"
+                class="dependency-label"
+            >
+                amod
+            </text>
+            
+            <line
+                id="edge-47-44"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-47-44"
+                class="dependency-label"
+            >
+                det
+            </text>
+            
+            <line
+                id="edge-47-46"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-47-46"
+                class="dependency-label"
+            >
+                compound
+            </text>
+            
+
+    </g>
+
+
+    <!-- NODES -->
+
+    <g id="nodes">
+
+        
+        <g
+            id="node-0"
+            class="node"
+            data-node="0"
+            transform="translate(245.0,400)"
+        >
+
+            <circle
+                cx="0"
+                cy="0"
+                r="48"
+            />
+
+            <text
+                x="0"
+                y="-5"
+                class="word"
+            >
+                The
+            </text>
+
+            <text
+                x="0"
+                y="15"
+                class="pos"
+            >
+                DET
+            </text>
+
+        </g>
+        
+        <g
+            id="node-1"
+            class="node"
+            data-node="1"
+            transform="translate(435.0,400)"
+        >
+
+            <circle
+                cx="0"
+                cy="0"
+                r="48"
+            />
+
+            <text
+                x="0"
+                y="-5"
+                class="word"
+            >
+                stale
+            </text>
+
+            <text
+                x="0"
+                y="15"
+                class="pos"
+            >
+                ADJ
+            </text>
+
+        </g>
+        
+        <g
+            id="node-4"
+            class="node"
+            data-node="4"
+            transform="translate(625.0,700)"
+        >
+
+            <circle
+                cx="0"
+                cy="0"
+                r="48"
+            />
+
+            <text
+                x="0"
+                y="-5"
+                class="word"
+            >
+                old
+            </text>
+
+            <text
+                x="0"
+                y="15"
+                class="pos"
+            >
+                ADJ
+            </text>
+
+        </g>
+        
+        <g
+            id="node-5"
+            class="node"
+            data-node="5"
+            transform="translate(625.0,550)"
+        >
+
+            <circle
+                cx="0"
+                cy="0"
+                r="48"
+            />
+
+            <text
+                x="0"
+                y="-5"
+                class="word"
+            >
+                beer
+            </text>
+
+            <text
+                x="0"
+                y="15"
+                class="pos"
+            >
+                NOUN
+            </text>
+
+        </g>
+        
+        <g
+            id="node-3"
+            class="node"
+            data-node="3"
+            transform="translate(625.0,400)"
+        >
+
+            <circle
+                cx="0"
+                cy="0"
+                r="48"
+            />
+
+            <text
+                x="0"
+                y="-5"
+                class="word"
+            >
+                of
+            </text>
+
+            <text
+                x="0"
+                y="15"
+                class="pos"
+            >
+                ADP
+            </text>
+
+        </g>
+        
+        <g
+            id="node-2"
+            class="node"
+            data-node="2"
+            transform="translate(435.0,250)"
+        >
+
+            <circle
+                cx="0"
+                cy="0"
+                r="48"
+            />
+
+            <text
+                x="0"
+                y="-5"
+                class="word"
+            >
+                smell
+            </text>
+
+            <text
+                x="0"
+                y="15"
+                class="pos"
+            >
+                NOUN
+            </text>
+
+        </g>
+        
+        <g
+            id="node-7"
+            class="node"
+            data-node="7"
+            transform="translate(815.0,250)"
+        >
+
+            <circle
+                cx="0"
+                cy="0"
+                r="48"
+            />
+
+            <text
+                x="0"
+                y="-5"
+                class="word"
+            >
+                .
+            </text>
+
+            <text
+                x="0"
+                y="15"
+                class="pos"
+            >
+                PUNCT
+            </text>
+
+        </g>
+        
+        <g
+            id="node-6"
+            class="node root-node"
+            data-node="6"
+            transform="translate(625.0,100)"
+        >
+
+            <circle
+                cx="0"
+                cy="0"
+                r="48"
+            />
+
+            <text
+                x="0"
+                y="-5"
+                class="word"
+            >
+                lingers
+            </text>
+
+            <text
+                x="0"
+                y="15"
+                class="pos"
+            >
+                NOUN
+            </text>
+
+        </g>
+        
+
+    </g>
+
+</svg>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   SVG
+   ===================================================== */
+
+const svg =
+    document.getElementById("tree");
+
+
+/* =====================================================
+   INITIAL POSITIONS
+   ===================================================== */
+
+const initialPositions = {
+
+
+    0: {
+        x: 245.0,
+        y: 400
+    },
+
+    1: {
+        x: 435.0,
+        y: 400
+    },
+
+    4: {
+        x: 625.0,
+        y: 700
+    },
+
+    5: {
+        x: 625.0,
+        y: 550
+    },
+
+    3: {
+        x: 625.0,
+        y: 400
+    },
+
+    2: {
+        x: 435.0,
+        y: 250
+    },
+
+    7: {
+        x: 815.0,
+        y: 250
+    },
+
+    6: {
+        x: 625.0,
+        y: 100
+    },
+
+};
+
+
+/* =====================================================
+   CURRENT POSITIONS
+   ===================================================== */
+
+const positions = {};
+
+for (
+    const [node, position]
+    of Object.entries(initialPositions)
+) {
+
+    positions[node] = {
+        x: position.x,
+        y: position.y
+    };
+
+}
+
+
+/* =====================================================
+   RELATIONSHIPS
+   ===================================================== */
+
+const relationships = [
+
+
+    {
+        parent: 2,
+        child: 0
+    },
+
+    {
+        parent: 2,
+        child: 1
+    },
+
+    {
+        parent: 2,
+        child: 3
+    },
+
+    {
+        parent: 3,
+        child: 5
+    },
+
+    {
+        parent: 5,
+        child: 4
+    },
+
+    {
+        parent: 6,
+        child: 2
+    },
+
+    {
+        parent: 6,
+        child: 7
+    },
+
+    {
+        parent: 9,
+        child: 8
+    },
+
+    {
+        parent: 9,
+        child: 10
+    },
+
+    {
+        parent: 9,
+        child: 12
+    },
+
+    {
+        parent: 9,
+        child: 16
+    },
+
+    {
+        parent: 12,
+        child: 11
+    },
+
+    {
+        parent: 12,
+        child: 13
+    },
+
+    {
+        parent: 12,
+        child: 15
+    },
+
+    {
+        parent: 15,
+        child: 14
+    },
+
+    {
+        parent: 19,
+        child: 17
+    },
+
+    {
+        parent: 19,
+        child: 18
+    },
+
+    {
+        parent: 20,
+        child: 19
+    },
+
+    {
+        parent: 20,
+        child: 21
+    },
+
+    {
+        parent: 20,
+        child: 24
+    },
+
+    {
+        parent: 21,
+        child: 22
+    },
+
+    {
+        parent: 21,
+        child: 23
+    },
+
+    {
+        parent: 27,
+        child: 25
+    },
+
+    {
+        parent: 27,
+        child: 26
+    },
+
+    {
+        parent: 28,
+        child: 27
+    },
+
+    {
+        parent: 28,
+        child: 29
+    },
+
+    {
+        parent: 28,
+        child: 30
+    },
+
+    {
+        parent: 28,
+        child: 32
+    },
+
+    {
+        parent: 30,
+        child: 31
+    },
+
+    {
+        parent: 34,
+        child: 33
+    },
+
+    {
+        parent: 35,
+        child: 34
+    },
+
+    {
+        parent: 36,
+        child: 35
+    },
+
+    {
+        parent: 36,
+        child: 38
+    },
+
+    {
+        parent: 36,
+        child: 39
+    },
+
+    {
+        parent: 38,
+        child: 37
+    },
+
+    {
+        parent: 42,
+        child: 40
+    },
+
+    {
+        parent: 42,
+        child: 41
+    },
+
+    {
+        parent: 43,
+        child: 42
+    },
+
+    {
+        parent: 43,
+        child: 47
+    },
+
+    {
+        parent: 43,
+        child: 48
+    },
+
+    {
+        parent: 46,
+        child: 45
+    },
+
+    {
+        parent: 47,
+        child: 44
+    },
+
+    {
+        parent: 47,
+        child: 46
+    },
+
+];
+
+
+/* =====================================================
+   GET SVG COORDINATES
+   ===================================================== */
+
+function getSVGPoint(event) {
+
+    const point =
+        svg.createSVGPoint();
+
+    point.x =
+        event.clientX;
+
+    point.y =
+        event.clientY;
+
+    const matrix =
+        svg
+            .getScreenCTM()
+            .inverse();
+
+    return point.matrixTransform(matrix);
+}
+
+
+/* =====================================================
+   UPDATE EDGES
+   ===================================================== */
+
+function updateEdges() {
+
+    relationships.forEach(connection => {
+
+        const parent =
+            positions[connection.parent];
+
+        const child =
+            positions[connection.child];
+
+        if (!parent || !child) {
+            return;
+        }
+
+
+        const dx =
+            child.x - parent.x;
+
+        const dy =
+            child.y - parent.y;
+
+        const distance =
+            Math.sqrt(
+                dx * dx +
+                dy * dy
+            );
+
+        if (distance === 0) {
+            return;
+        }
+
+
+        const radius = 48;
+
+
+        /*
+         * Arrow starts at edge of parent circle
+         */
+
+        const startX =
+            parent.x +
+            (dx / distance) *
+            radius;
+
+        const startY =
+            parent.y +
+            (dy / distance) *
+            radius;
+
+
+        /*
+         * Arrow ends at edge of child circle
+         */
+
+        const endX =
+            child.x -
+            (dx / distance) *
+            radius;
+
+        const endY =
+            child.y -
+            (dy / distance) *
+            radius;
+
+
+        /*
+         * Update arrow
+         */
+
+        const edge =
+            document.getElementById(
+                `edge-${connection.parent}-${connection.child}`
+            );
+
+        if (edge) {
+
+            edge.setAttribute(
+                "x1",
+                startX
+            );
+
+            edge.setAttribute(
+                "y1",
+                startY
+            );
+
+            edge.setAttribute(
+                "x2",
+                endX
+            );
+
+            edge.setAttribute(
+                "y2",
+                endY
+            );
+
+        }
+
+
+        /*
+         * Update dependency label
+         */
+
+        const label =
+            document.getElementById(
+                `label-${connection.parent}-${connection.child}`
+            );
+
+        if (label) {
+
+            label.setAttribute(
+                "x",
+                (startX + endX) / 2
+            );
+
+            label.setAttribute(
+                "y",
+                (startY + endY) / 2 - 8
+            );
+
+        }
+
+    });
+
+}
+
+
+/* =====================================================
+   DRAGGING STATE
+   ===================================================== */
+
+let draggedNode = null;
+
+let dragOffsetX = 0;
+
+let dragOffsetY = 0;
+
+
+/* =====================================================
+   START DRAG
+   ===================================================== */
+
+document
+    .querySelectorAll(".node")
+    .forEach(node => {
+
+        node.addEventListener(
+            "pointerdown",
+            function(event) {
+
+                event.preventDefault();
+
+                draggedNode =
+                    Number(
+                        this.dataset.node
+                    );
+
+
+                const point =
+                    getSVGPoint(event);
+
+
+                dragOffsetX =
+                    positions[draggedNode].x -
+                    point.x;
+
+
+                dragOffsetY =
+                    positions[draggedNode].y -
+                    point.y;
+
+
+                this.setPointerCapture(
+                    event.pointerId
+                );
+
+
+                document
+                    .querySelectorAll(".node")
+                    .forEach(n => {
+
+                        n.classList.remove(
+                            "selected"
+                        );
+
+                    });
+
+
+                this.classList.add(
+                    "selected"
+                );
+
+            }
+        );
+
+    });
+
+
+/* =====================================================
+   DRAG
+   ===================================================== */
+
+svg.addEventListener(
+    "pointermove",
+    function(event) {
+
+        if (draggedNode === null) {
+            return;
+        }
+
+
+        const point =
+            getSVGPoint(event);
+
+
+        let x =
+            point.x +
+            dragOffsetX;
+
+
+        let y =
+            point.y +
+            dragOffsetY;
+
+
+        const radius = 48;
+
+
+        /*
+         * Keep node inside canvas
+         */
+
+        x = Math.max(
+            radius,
+            Math.min(
+                1400 - radius,
+                x
+            )
+        );
+
+
+        y = Math.max(
+            radius,
+            Math.min(
+                950 - radius,
+                y
+            )
+        );
+
+
+        positions[draggedNode].x = x;
+
+        positions[draggedNode].y = y;
+
+
+        const node =
+            document.getElementById(
+                `node-${draggedNode}`
+            );
+
+
+        if (node) {
+
+            node.setAttribute(
+                "transform",
+                `translate(${x},${y})`
+            );
+
+        }
+
+
+        updateEdges();
+
+    }
+);
+
+
+/* =====================================================
+   END DRAG
+   ===================================================== */
+
+svg.addEventListener(
+    "pointerup",
+    function() {
+
+        draggedNode = null;
+
+    }
+);
+
+
+svg.addEventListener(
+    "pointercancel",
+    function() {
+
+        draggedNode = null;
+
+    }
+);
+
+
+/* =====================================================
+   RESET
+   ===================================================== */
+
+svg.addEventListener(
+    "dblclick",
+    function(event) {
+
+        if (event.target !== svg) {
+            return;
+        }
+
+
+        for (
+            const [node, position]
+            of Object.entries(initialPositions)
+        ) {
+
+            positions[node].x =
+                position.x;
+
+            positions[node].y =
+                position.y;
+
+
+            const element =
+                document.getElementById(
+                    `node-${node}`
+                );
+
+
+            if (element) {
+
+                element.setAttribute(
+                    "transform",
+                    `translate(${position.x},${position.y})`
+                );
+
+            }
+
+        }
+
+
+        document
+            .querySelectorAll(".node")
+            .forEach(n => {
+
+                n.classList.remove(
+                    "selected"
+                );
+
+            });
+
+
+        updateEdges();
+
+    }
+);
+
+
+/* =====================================================
+   INITIAL DRAW
+   ===================================================== */
+
+updateEdges();
+
+</script>
+
+</body>
+
+</html>

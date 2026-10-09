@@ -1,0 +1,937 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>HOC Dependency Tree</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fa;
+}
+
+.workspace {
+
+    width: 100%;
+    height: 100%;
+
+    overflow: auto;
+
+    padding: 25px;
+}
+
+svg {
+
+    display: block;
+
+    background: white;
+
+    border:
+        1px solid #d5d5d5;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 12px
+        rgba(0,0,0,0.08);
+}
+
+.edge {
+
+    stroke: #333;
+
+    stroke-width: 2.5;
+
+    fill: none;
+
+    pointer-events: none;
+}
+
+.dependency-label {
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    fill: #555;
+
+    text-anchor: middle;
+
+    pointer-events: none;
+
+    paint-order: stroke;
+
+    stroke: white;
+
+    stroke-width: 5px;
+
+    stroke-linejoin: round;
+}
+
+.node {
+
+    cursor: grab;
+}
+
+.node:active {
+
+    cursor: grabbing;
+}
+
+.node circle {
+
+    fill: white;
+
+    stroke: #222;
+
+    stroke-width: 2.5;
+}
+
+.node:hover circle {
+
+    fill: #f1f5f9;
+
+    stroke-width: 3.5;
+}
+
+.root-node circle {
+
+    fill: #e8f0ff;
+
+    stroke: #1d4ed8;
+
+    stroke-width: 4;
+}
+
+.selected circle {
+
+    stroke: #dc2626;
+
+    stroke-width: 4;
+}
+
+.word {
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    text-anchor: middle;
+
+    dominant-baseline: middle;
+
+    pointer-events: none;
+}
+
+.pos {
+
+    font-size: 11px;
+
+    fill: #666;
+
+    text-anchor: middle;
+
+    pointer-events: none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="workspace">
+
+<svg
+    id="dependencyTree"
+    width="1400"
+    height="900"
+    viewBox="0 0 1400 900"
+>
+
+<defs>
+
+<marker
+    id="arrow"
+    markerWidth="10"
+    markerHeight="10"
+    refX="8"
+    refY="4"
+    orient="auto"
+    markerUnits="strokeWidth"
+>
+
+    <path
+        d="M0,0 L0,8 L9,4 Z"
+        fill="#333"
+    />
+
+</marker>
+
+</defs>
+
+<g id="edges">
+
+
+            <line
+                id="edge-1-0"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-1-0"
+                class="dependency-label"
+            >
+                det
+            </text>
+            
+            <line
+                id="edge-3-2"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-3-2"
+                class="dependency-label"
+            >
+                det
+            </text>
+            
+            <line
+                id="edge-4-1"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-4-1"
+                class="dependency-label"
+            >
+                nsubj
+            </text>
+            
+            <line
+                id="edge-4-3"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-4-3"
+                class="dependency-label"
+            >
+                nsubj
+            </text>
+            
+            <line
+                id="edge-4-6"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-4-6"
+                class="dependency-label"
+            >
+                dobj
+            </text>
+            
+            <line
+                id="edge-6-5"
+                class="edge"
+                marker-end="url(#arrow)"
+            />
+
+            <text
+                id="label-6-5"
+                class="dependency-label"
+            >
+                compound
+            </text>
+            
+
+</g>
+
+<g id="nodes">
+
+
+        <g
+            id="node-0"
+            class="node"
+            data-node="0"
+            transform="translate(215.0,400)"
+        >
+
+            <circle
+                cx="0"
+                cy="0"
+                r="48"
+            />
+
+            <text
+                x="0"
+                y="-5"
+                class="word"
+            >
+                The
+            </text>
+
+            <text
+                x="0"
+                y="15"
+                class="pos"
+            >
+                DET
+            </text>
+
+        </g>
+        
+        <g
+            id="node-1"
+            class="node"
+            data-node="1"
+            transform="translate(215.0,250)"
+        >
+
+            <circle
+                cx="0"
+                cy="0"
+                r="48"
+            />
+
+            <text
+                x="0"
+                y="-5"
+                class="word"
+            >
+                blue
+            </text>
+
+            <text
+                x="0"
+                y="15"
+                class="pos"
+            >
+                NOUN
+            </text>
+
+        </g>
+        
+        <g
+            id="node-2"
+            class="node"
+            data-node="2"
+            transform="translate(405.0,400)"
+        >
+
+            <circle
+                cx="0"
+                cy="0"
+                r="48"
+            />
+
+            <text
+                x="0"
+                y="-5"
+                class="word"
+            >
+                the
+            </text>
+
+            <text
+                x="0"
+                y="15"
+                class="pos"
+            >
+                DET
+            </text>
+
+        </g>
+        
+        <g
+            id="node-3"
+            class="node"
+            data-node="3"
+            transform="translate(405.0,250)"
+        >
+
+            <circle
+                cx="0"
+                cy="0"
+                r="48"
+            />
+
+            <text
+                x="0"
+                y="-5"
+                class="word"
+            >
+                in
+            </text>
+
+            <text
+                x="0"
+                y="15"
+                class="pos"
+            >
+                ADJ
+            </text>
+
+        </g>
+        
+        <g
+            id="node-4"
+            class="node root-node"
+            data-node="4"
+            transform="translate(405.0,100)"
+        >
+
+            <circle
+                cx="0"
+                cy="0"
+                r="48"
+            />
+
+            <text
+                x="0"
+                y="-5"
+                class="word"
+            >
+                flies
+            </text>
+
+            <text
+                x="0"
+                y="15"
+                class="pos"
+            >
+                NOUN
+            </text>
+
+        </g>
+        
+        <g
+            id="node-5"
+            class="node"
+            data-node="5"
+            transform="translate(595.0,400)"
+        >
+
+            <circle
+                cx="0"
+                cy="0"
+                r="48"
+            />
+
+            <text
+                x="0"
+                y="-5"
+                class="word"
+            >
+                aeroplane
+            </text>
+
+            <text
+                x="0"
+                y="15"
+                class="pos"
+            >
+                NOUN
+            </text>
+
+        </g>
+        
+        <g
+            id="node-6"
+            class="node"
+            data-node="6"
+            transform="translate(595.0,250)"
+        >
+
+            <circle
+                cx="0"
+                cy="0"
+                r="48"
+            />
+
+            <text
+                x="0"
+                y="-5"
+                class="word"
+            >
+                sky
+            </text>
+
+            <text
+                x="0"
+                y="15"
+                class="pos"
+            >
+                NOUN
+            </text>
+
+        </g>
+        
+
+</g>
+
+</svg>
+
+</div>
+
+<script>
+
+const svg =
+    document.getElementById(
+        "dependencyTree"
+    );
+
+
+const positions = {
+
+
+    0: {
+        x: 215.0,
+        y: 400
+    },
+
+    1: {
+        x: 215.0,
+        y: 250
+    },
+
+    2: {
+        x: 405.0,
+        y: 400
+    },
+
+    3: {
+        x: 405.0,
+        y: 250
+    },
+
+    5: {
+        x: 595.0,
+        y: 400
+    },
+
+    6: {
+        x: 595.0,
+        y: 250
+    },
+
+    4: {
+        x: 405.0,
+        y: 100
+    },
+
+};
+
+
+const originalPositions =
+    JSON.parse(
+        JSON.stringify(
+            positions
+        )
+    );
+
+
+const connections = [
+
+
+    {
+        parent: 1,
+        child: 0
+    },
+
+    {
+        parent: 3,
+        child: 2
+    },
+
+    {
+        parent: 4,
+        child: 1
+    },
+
+    {
+        parent: 4,
+        child: 3
+    },
+
+    {
+        parent: 4,
+        child: 6
+    },
+
+    {
+        parent: 6,
+        child: 5
+    },
+
+];
+
+
+function getSVGPoint(event) {
+
+    const point =
+        svg.createSVGPoint();
+
+    point.x =
+        event.clientX;
+
+    point.y =
+        event.clientY;
+
+    const matrix =
+        svg
+            .getScreenCTM()
+            .inverse();
+
+    return point.matrixTransform(
+        matrix
+    );
+}
+
+
+function updateEdges() {
+
+    connections.forEach(
+        connection => {
+
+            const parent =
+                positions[
+                    connection.parent
+                ];
+
+            const child =
+                positions[
+                    connection.child
+                ];
+
+            if (!parent || !child) {
+                return;
+            }
+
+            const dx =
+                child.x - parent.x;
+
+            const dy =
+                child.y - parent.y;
+
+            const distance =
+                Math.sqrt(
+                    dx * dx +
+                    dy * dy
+                );
+
+            if (distance === 0) {
+                return;
+            }
+
+            const radius = 48;
+
+            const startX =
+                parent.x +
+                (dx / distance) *
+                radius;
+
+            const startY =
+                parent.y +
+                (dy / distance) *
+                radius;
+
+            const endX =
+                child.x -
+                (dx / distance) *
+                radius;
+
+            const endY =
+                child.y -
+                (dy / distance) *
+                radius;
+
+            const edge =
+                document.getElementById(
+                    `edge-${connection.parent}-${connection.child}`
+                );
+
+            if (edge) {
+
+                edge.setAttribute(
+                    "x1",
+                    startX
+                );
+
+                edge.setAttribute(
+                    "y1",
+                    startY
+                );
+
+                edge.setAttribute(
+                    "x2",
+                    endX
+                );
+
+                edge.setAttribute(
+                    "y2",
+                    endY
+                );
+            }
+
+            const label =
+                document.getElementById(
+                    `label-${connection.parent}-${connection.child}`
+                );
+
+            if (label) {
+
+                label.setAttribute(
+                    "x",
+                    (startX + endX) / 2
+                );
+
+                label.setAttribute(
+                    "y",
+                    (startY + endY) / 2 - 8
+                );
+            }
+
+        }
+    );
+
+}
+
+
+let draggedNode = null;
+
+let offsetX = 0;
+
+let offsetY = 0;
+
+
+document
+    .querySelectorAll(".node")
+    .forEach(node => {
+
+        node.addEventListener(
+            "pointerdown",
+            event => {
+
+                event.preventDefault();
+
+                draggedNode =
+                    Number(
+                        node.dataset.node
+                    );
+
+                const point =
+                    getSVGPoint(event);
+
+                offsetX =
+                    positions[
+                        draggedNode
+                    ].x -
+                    point.x;
+
+                offsetY =
+                    positions[
+                        draggedNode
+                    ].y -
+                    point.y;
+
+                node.setPointerCapture(
+                    event.pointerId
+                );
+
+                document
+                    .querySelectorAll(".node")
+                    .forEach(item => {
+
+                        item.classList.remove(
+                            "selected"
+                        );
+
+                    });
+
+                node.classList.add(
+                    "selected"
+                );
+
+            }
+        );
+
+    });
+
+
+svg.addEventListener(
+    "pointermove",
+    event => {
+
+        if (draggedNode === null) {
+            return;
+        }
+
+        const point =
+            getSVGPoint(event);
+
+        let x =
+            point.x +
+            offsetX;
+
+        let y =
+            point.y +
+            offsetY;
+
+        const radius = 48;
+
+        x = Math.max(
+            radius,
+            Math.min(
+                1400 - radius,
+                x
+            )
+        );
+
+        y = Math.max(
+            radius,
+            Math.min(
+                900 - radius,
+                y
+            )
+        );
+
+        positions[
+            draggedNode
+        ].x = x;
+
+        positions[
+            draggedNode
+        ].y = y;
+
+        const node =
+            document.getElementById(
+                `node-${draggedNode}`
+            );
+
+        if (node) {
+
+            node.setAttribute(
+                "transform",
+                `translate(${x},${y})`
+            );
+
+        }
+
+        updateEdges();
+
+    }
+);
+
+
+svg.addEventListener(
+    "pointerup",
+    () => {
+
+        draggedNode = null;
+
+    }
+);
+
+
+svg.addEventListener(
+    "pointercancel",
+    () => {
+
+        draggedNode = null;
+
+    }
+);
+
+
+svg.addEventListener(
+    "dblclick",
+    event => {
+
+        if (event.target !== svg) {
+            return;
+        }
+
+        Object.keys(
+            originalPositions
+        ).forEach(id => {
+
+            positions[id].x =
+                originalPositions[id].x;
+
+            positions[id].y =
+                originalPositions[id].y;
+
+            const node =
+                document.getElementById(
+                    `node-${id}`
+                );
+
+            if (node) {
+
+                node.setAttribute(
+                    "transform",
+                    `translate(
+                        ${positions[id].x},
+                        ${positions[id].y}
+                    )`
+                );
+
+            }
+
+        });
+
+        document
+            .querySelectorAll(".node")
+            .forEach(item => {
+
+                item.classList.remove(
+                    "selected"
+                );
+
+            });
+
+        updateEdges();
+
+    }
+);
+
+
+updateEdges();
+
+</script>
+
+</body>
+
+</html>
