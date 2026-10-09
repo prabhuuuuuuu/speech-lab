@@ -1,0 +1,1558 @@
+{
+ "summary": {
+  "Knowledge-based QA": {
+   "EM": 0.9117647058823529,
+   "F1": 0.9117647058823529,
+   "EM (answerable)": 0.9032258064516129,
+   "Coverage": 0.9032258064516129,
+   "Precision@answered": 1.0,
+   "Abstention acc.": 1.0,
+   "Latency (ms)": 1.5072121339685776
+  },
+  "DL: DistilBERT (SQuAD 1.1)": {
+   "EM": 0.5588235294117647,
+   "F1": 0.6151960784313726,
+   "EM (answerable)": 0.6129032258064516,
+   "Coverage": 1.0,
+   "Precision@answered": 0.6129032258064516,
+   "Abstention acc.": 0.0,
+   "Latency (ms)": 170.08392951067756
+  },
+  "DL: RoBERTa (SQuAD 2.0)": {
+   "EM": 0.7647058823529411,
+   "F1": 0.8137254901960784,
+   "EM (answerable)": 0.7419354838709677,
+   "Coverage": 0.9032258064516129,
+   "Precision@answered": 0.8214285714285714,
+   "Abstention acc.": 1.0,
+   "Latency (ms)": 330.15900499680464
+  },
+  "Hybrid (KB -> RoBERTa fallback)": {
+   "EM": 1.0,
+   "F1": 1.0,
+   "EM (answerable)": 1.0,
+   "Coverage": 1.0,
+   "Precision@answered": 1.0,
+   "Abstention acc.": 1.0,
+   "Latency (ms)": 66.82114741381477
+  }
+ },
+ "per_question": {
+  "Knowledge-based QA": [
+   {
+    "q": "What is the capital of India?",
+    "gold": [
+     "New Delhi"
+    ],
+    "cat": "simple",
+    "pred": "New Delhi",
+    "latency": 0.004533529281616211,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who founded Infosys?",
+    "gold": [
+     "N. R. Narayana Murthy",
+     "Narayana Murthy"
+    ],
+    "cat": "simple",
+    "pred": "N. R. Narayana Murthy",
+    "latency": 0.0014951229095458984,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "When was IIT Madras founded?",
+    "gold": [
+     "1959"
+    ],
+    "cat": "simple",
+    "pred": "1959",
+    "latency": 0.0012278556823730469,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Where was Sundar Pichai born?",
+    "gold": [
+     "Madurai"
+    ],
+    "cat": "simple",
+    "pred": "Madurai",
+    "latency": 0.0010209083557128906,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who is the CEO of Google?",
+    "gold": [
+     "Sundar Pichai"
+    ],
+    "cat": "simple",
+    "pred": "Sundar Pichai",
+    "latency": 0.0013318061828613281,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "What is the currency of Japan?",
+    "gold": [
+     "Japanese Yen",
+     "Yen"
+    ],
+    "cat": "simple",
+    "pred": "Japanese Yen",
+    "latency": 0.0027222633361816406,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "What is C. V. Raman known for?",
+    "gold": [
+     "Raman effect",
+     "the discovery of the Raman effect"
+    ],
+    "cat": "simple",
+    "pred": "Raman effect",
+    "latency": 0.0013804435729980469,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who launched Chandrayaan-3?",
+    "gold": [
+     "ISRO",
+     "Indian Space Research Organisation"
+    ],
+    "cat": "simple",
+    "pred": "ISRO",
+    "latency": 0.0009210109710693359,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Where is ISRO headquartered?",
+    "gold": [
+     "Bengaluru",
+     "Bangalore"
+    ],
+    "cat": "simple",
+    "pred": "Bengaluru",
+    "latency": 0.0008873939514160156,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "When was A. P. J. Abdul Kalam born?",
+    "gold": [
+     "15 October 1931"
+    ],
+    "cat": "simple",
+    "pred": "15 October 1931",
+    "latency": 0.0010225772857666016,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which city serves as the capital of Tamil Nadu?",
+    "gold": [
+     "Chennai"
+    ],
+    "cat": "paraphrase",
+    "pred": "Chennai",
+    "latency": 0.0033254623413085938,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who is the founder of VIT University?",
+    "gold": [
+     "G. Viswanathan"
+    ],
+    "cat": "paraphrase",
+    "pred": "G. Viswanathan",
+    "latency": 0.0014028549194335938,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which year was Google established?",
+    "gold": [
+     "1998"
+    ],
+    "cat": "paraphrase",
+    "pred": "1998",
+    "latency": 0.0012776851654052734,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Tell me the birthplace of Marie Curie.",
+    "gold": [
+     "Warsaw"
+    ],
+    "cat": "paraphrase",
+    "pred": "Warsaw",
+    "latency": 0.0015194416046142578,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who heads Infosys as chief executive?",
+    "gold": [
+     "Salil Parekh"
+    ],
+    "cat": "paraphrase",
+    "pred": "Salil Parekh",
+    "latency": 0.0011289119720458984,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which institute did Sundar Pichai attend?",
+    "gold": [
+     "IIT Kharagpur"
+    ],
+    "cat": "paraphrase",
+    "pred": "IIT Kharagpur",
+    "latency": 0.001325845718383789,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Chennai is the capital of which state?",
+    "gold": [
+     "Tamil Nadu"
+    ],
+    "cat": "inverse",
+    "pred": "Tamil Nadu",
+    "latency": 0.0028886795043945312,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which company is led by Sundar Pichai?",
+    "gold": [
+     "Google"
+    ],
+    "cat": "inverse",
+    "pred": "Google",
+    "latency": 0.0011725425720214844,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which organisation was founded by Vikram Sarabhai?",
+    "gold": [
+     "ISRO",
+     "Indian Space Research Organisation"
+    ],
+    "cat": "inverse",
+    "pred": "ISRO",
+    "latency": 0.0014524459838867188,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which state was Sundar Pichai born?",
+    "gold": [
+     "Tamil Nadu"
+    ],
+    "cat": "multi-hop",
+    "pred": "Tamil Nadu",
+    "latency": 0.0008337497711181641,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which country is VIT University located?",
+    "gold": [
+     "India"
+    ],
+    "cat": "multi-hop",
+    "pred": "India",
+    "latency": 0.0021085739135742188,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which country was Albert Einstein born?",
+    "gold": [
+     "Germany"
+    ],
+    "cat": "multi-hop",
+    "pred": "Germany",
+    "latency": 0.0019118785858154297,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which state is the headquarters of Infosys?",
+    "gold": [
+     "Karnataka"
+    ],
+    "cat": "multi-hop",
+    "pred": "Karnataka",
+    "latency": 0.001249551773071289,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who is the CEO of Gogle?",
+    "gold": [
+     "Sundar Pichai"
+    ],
+    "cat": "typo/alias",
+    "pred": "Sundar Pichai",
+    "latency": 0.0011036396026611328,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Where was Abdul Kalam born?",
+    "gold": [
+     "Rameswaram"
+    ],
+    "cat": "typo/alias",
+    "pred": "Rameswaram",
+    "latency": 0.0009777545928955078,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Where is Bangalore located?",
+    "gold": [
+     "Karnataka"
+    ],
+    "cat": "typo/alias",
+    "pred": "Karnataka",
+    "latency": 0.0010104179382324219,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "How many Nobel Prizes did Marie Curie win?",
+    "gold": [
+     "two",
+     "2"
+    ],
+    "cat": "aggregation",
+    "pred": "2",
+    "latency": 0.0015594959259033203,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "When did Chandrayaan-3 land on the Moon?",
+    "gold": [
+     "23 August 2023"
+    ],
+    "cat": "text-only",
+    "pred": null,
+    "latency": 0.0007016658782958984,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "Near which region of the Moon did Chandrayaan-3 land?",
+    "gold": [
+     "south pole",
+     "the south pole of the Moon"
+    ],
+    "cat": "text-only",
+    "pred": null,
+    "latency": 0.0024254322052001953,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "By what nickname is Abdul Kalam popularly known?",
+    "gold": [
+     "Missile Man of India",
+     "the Missile Man of India"
+    ],
+    "cat": "text-only",
+    "pred": null,
+    "latency": 0.002117156982421875,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "When was Python released?",
+    "gold": [
+     "1991"
+    ],
+    "cat": "kb-only",
+    "pred": "1991",
+    "latency": 0.0007417201995849609,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who is the CEO of ISRO?",
+    "gold": [],
+    "cat": "unanswerable",
+    "pred": null,
+    "latency": 0.0007791519165039062,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "What is the capital of Brazil?",
+    "gold": [],
+    "cat": "unanswerable",
+    "pred": null,
+    "latency": 0.0011162757873535156,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who founded Microsoft?",
+    "gold": [],
+    "cat": "unanswerable",
+    "pred": null,
+    "latency": 0.0005719661712646484,
+    "em": 1.0,
+    "f1": 1.0
+   }
+  ],
+  "DL: DistilBERT (SQuAD 1.1)": [
+   {
+    "q": "What is the capital of India?",
+    "gold": [
+     "New Delhi"
+    ],
+    "cat": "simple",
+    "pred": "Tokyo",
+    "latency": 0.09369254112243652,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "Who founded Infosys?",
+    "gold": [
+     "N. R. Narayana Murthy",
+     "Narayana Murthy"
+    ],
+    "cat": "simple",
+    "pred": "N. R. Narayana Murthy",
+    "latency": 0.1984386444091797,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "When was IIT Madras founded?",
+    "gold": [
+     "1959"
+    ],
+    "cat": "simple",
+    "pred": "1959",
+    "latency": 0.10031914710998535,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Where was Sundar Pichai born?",
+    "gold": [
+     "Madurai"
+    ],
+    "cat": "simple",
+    "pred": "Madurai, Tamil Nadu",
+    "latency": 0.14743685722351074,
+    "em": 0.0,
+    "f1": 0.5
+   },
+   {
+    "q": "Who is the CEO of Google?",
+    "gold": [
+     "Sundar Pichai"
+    ],
+    "cat": "simple",
+    "pred": "Salil Parekh",
+    "latency": 0.09460163116455078,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "What is the currency of Japan?",
+    "gold": [
+     "Japanese Yen",
+     "Yen"
+    ],
+    "cat": "simple",
+    "pred": "Japanese Yen",
+    "latency": 0.12588810920715332,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "What is C. V. Raman known for?",
+    "gold": [
+     "Raman effect",
+     "the discovery of the Raman effect"
+    ],
+    "cat": "simple",
+    "pred": "Missile Man of India",
+    "latency": 0.2704620361328125,
+    "em": 0.0,
+    "f1": 0.25
+   },
+   {
+    "q": "Who launched Chandrayaan-3?",
+    "gold": [
+     "ISRO",
+     "Indian Space Research Organisation"
+    ],
+    "cat": "simple",
+    "pred": "ISRO",
+    "latency": 0.11371779441833496,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Where is ISRO headquartered?",
+    "gold": [
+     "Bengaluru",
+     "Bangalore"
+    ],
+    "cat": "simple",
+    "pred": "Bengaluru",
+    "latency": 0.222015380859375,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "When was A. P. J. Abdul Kalam born?",
+    "gold": [
+     "15 October 1931"
+    ],
+    "cat": "simple",
+    "pred": "15 October 1931",
+    "latency": 0.20380306243896484,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which city serves as the capital of Tamil Nadu?",
+    "gold": [
+     "Chennai"
+    ],
+    "cat": "paraphrase",
+    "pred": "Chennai",
+    "latency": 0.09097814559936523,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who is the founder of VIT University?",
+    "gold": [
+     "G. Viswanathan"
+    ],
+    "cat": "paraphrase",
+    "pred": "G. Viswanathan",
+    "latency": 0.20279598236083984,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which year was Google established?",
+    "gold": [
+     "1998"
+    ],
+    "cat": "paraphrase",
+    "pred": "1998",
+    "latency": 0.18550539016723633,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Tell me the birthplace of Marie Curie.",
+    "gold": [
+     "Warsaw"
+    ],
+    "cat": "paraphrase",
+    "pred": "Warsaw, Poland",
+    "latency": 0.2502119541168213,
+    "em": 0.0,
+    "f1": 0.6666666666666666
+   },
+   {
+    "q": "Who heads Infosys as chief executive?",
+    "gold": [
+     "Salil Parekh"
+    ],
+    "cat": "paraphrase",
+    "pred": "Salil Parekh",
+    "latency": 0.12151956558227539,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which institute did Sundar Pichai attend?",
+    "gold": [
+     "IIT Kharagpur"
+    ],
+    "cat": "paraphrase",
+    "pred": "IIT Kharagpur",
+    "latency": 0.12332296371459961,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Chennai is the capital of which state?",
+    "gold": [
+     "Tamil Nadu"
+    ],
+    "cat": "inverse",
+    "pred": "Tamil Nadu",
+    "latency": 0.2029266357421875,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which company is led by Sundar Pichai?",
+    "gold": [
+     "Google"
+    ],
+    "cat": "inverse",
+    "pred": "Google",
+    "latency": 0.09013533592224121,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which organisation was founded by Vikram Sarabhai?",
+    "gold": [
+     "ISRO",
+     "Indian Space Research Organisation"
+    ],
+    "cat": "inverse",
+    "pred": "Infosys",
+    "latency": 0.20970463752746582,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "In which state was Sundar Pichai born?",
+    "gold": [
+     "Tamil Nadu"
+    ],
+    "cat": "multi-hop",
+    "pred": "Tamil Nadu",
+    "latency": 0.19245123863220215,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which country is VIT University located?",
+    "gold": [
+     "India"
+    ],
+    "cat": "multi-hop",
+    "pred": "California",
+    "latency": 0.16567468643188477,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "In which country was Albert Einstein born?",
+    "gold": [
+     "Germany"
+    ],
+    "cat": "multi-hop",
+    "pred": "Germany",
+    "latency": 0.1968233585357666,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which state is the headquarters of Infosys?",
+    "gold": [
+     "Karnataka"
+    ],
+    "cat": "multi-hop",
+    "pred": "Bengaluru",
+    "latency": 0.09284782409667969,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "Who is the CEO of Gogle?",
+    "gold": [
+     "Sundar Pichai"
+    ],
+    "cat": "typo/alias",
+    "pred": "Salil Parekh",
+    "latency": 0.1957838535308838,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "Where was Abdul Kalam born?",
+    "gold": [
+     "Rameswaram"
+    ],
+    "cat": "typo/alias",
+    "pred": "Rameswaram, Tamil Nadu",
+    "latency": 0.23155808448791504,
+    "em": 0.0,
+    "f1": 0.5
+   },
+   {
+    "q": "Where is Bangalore located?",
+    "gold": [
+     "Karnataka"
+    ],
+    "cat": "typo/alias",
+    "pred": "Chennai",
+    "latency": 0.18564295768737793,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "How many Nobel Prizes did Marie Curie win?",
+    "gold": [
+     "two",
+     "2"
+    ],
+    "cat": "aggregation",
+    "pred": "two",
+    "latency": 0.26909589767456055,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "When did Chandrayaan-3 land on the Moon?",
+    "gold": [
+     "23 August 2023"
+    ],
+    "cat": "text-only",
+    "pred": "23 August 2023",
+    "latency": 0.3259851932525635,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Near which region of the Moon did Chandrayaan-3 land?",
+    "gold": [
+     "south pole",
+     "the south pole of the Moon"
+    ],
+    "cat": "text-only",
+    "pred": "south pole",
+    "latency": 0.23539352416992188,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "By what nickname is Abdul Kalam popularly known?",
+    "gold": [
+     "Missile Man of India",
+     "the Missile Man of India"
+    ],
+    "cat": "text-only",
+    "pred": "Missile Man of India",
+    "latency": 0.08806991577148438,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "When was Python released?",
+    "gold": [
+     "1991"
+    ],
+    "cat": "kb-only",
+    "pred": "Python",
+    "latency": 0.1702425479888916,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "Who is the CEO of ISRO?",
+    "gold": [],
+    "cat": "unanswerable",
+    "pred": "Salil Parekh",
+    "latency": 0.1060340404510498,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "What is the capital of Brazil?",
+    "gold": [],
+    "cat": "unanswerable",
+    "pred": "New Delhi",
+    "latency": 0.18165373802185059,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "Who founded Microsoft?",
+    "gold": [],
+    "cat": "unanswerable",
+    "pred": "N. R. Narayana Murthy",
+    "latency": 0.09812092781066895,
+    "em": 0.0,
+    "f1": 0.0
+   }
+  ],
+  "DL: RoBERTa (SQuAD 2.0)": [
+   {
+    "q": "What is the capital of India?",
+    "gold": [
+     "New Delhi"
+    ],
+    "cat": "simple",
+    "pred": "New Delhi",
+    "latency": 0.2633805274963379,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who founded Infosys?",
+    "gold": [
+     "N. R. Narayana Murthy",
+     "Narayana Murthy"
+    ],
+    "cat": "simple",
+    "pred": "N. R. Narayana Murthy",
+    "latency": 0.23166632652282715,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "When was IIT Madras founded?",
+    "gold": [
+     "1959"
+    ],
+    "cat": "simple",
+    "pred": "1959",
+    "latency": 0.25188493728637695,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Where was Sundar Pichai born?",
+    "gold": [
+     "Madurai"
+    ],
+    "cat": "simple",
+    "pred": "Madurai, Tamil Nadu",
+    "latency": 0.24212384223937988,
+    "em": 0.0,
+    "f1": 0.5
+   },
+   {
+    "q": "Who is the CEO of Google?",
+    "gold": [
+     "Sundar Pichai"
+    ],
+    "cat": "simple",
+    "pred": "Sundar Pichai",
+    "latency": 0.2544999122619629,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "What is the currency of Japan?",
+    "gold": [
+     "Japanese Yen",
+     "Yen"
+    ],
+    "cat": "simple",
+    "pred": "Japanese Yen",
+    "latency": 0.4384448528289795,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "What is C. V. Raman known for?",
+    "gold": [
+     "Raman effect",
+     "the discovery of the Raman effect"
+    ],
+    "cat": "simple",
+    "pred": null,
+    "latency": 0.3872408866882324,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "Who launched Chandrayaan-3?",
+    "gold": [
+     "ISRO",
+     "Indian Space Research Organisation"
+    ],
+    "cat": "simple",
+    "pred": "Indian Space Research Organisation",
+    "latency": 0.48313355445861816,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Where is ISRO headquartered?",
+    "gold": [
+     "Bengaluru",
+     "Bangalore"
+    ],
+    "cat": "simple",
+    "pred": "Bengaluru",
+    "latency": 0.3226485252380371,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "When was A. P. J. Abdul Kalam born?",
+    "gold": [
+     "15 October 1931"
+    ],
+    "cat": "simple",
+    "pred": "15 October 1931",
+    "latency": 0.5743274688720703,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which city serves as the capital of Tamil Nadu?",
+    "gold": [
+     "Chennai"
+    ],
+    "cat": "paraphrase",
+    "pred": "Chennai",
+    "latency": 0.2774369716644287,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who is the founder of VIT University?",
+    "gold": [
+     "G. Viswanathan"
+    ],
+    "cat": "paraphrase",
+    "pred": "G. Viswanathan",
+    "latency": 0.3050985336303711,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which year was Google established?",
+    "gold": [
+     "1998"
+    ],
+    "cat": "paraphrase",
+    "pred": "1998",
+    "latency": 0.33743810653686523,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Tell me the birthplace of Marie Curie.",
+    "gold": [
+     "Warsaw"
+    ],
+    "cat": "paraphrase",
+    "pred": "Warsaw, Poland",
+    "latency": 0.4098360538482666,
+    "em": 0.0,
+    "f1": 0.6666666666666666
+   },
+   {
+    "q": "Who heads Infosys as chief executive?",
+    "gold": [
+     "Salil Parekh"
+    ],
+    "cat": "paraphrase",
+    "pred": "Salil Parekh",
+    "latency": 0.34929490089416504,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which institute did Sundar Pichai attend?",
+    "gold": [
+     "IIT Kharagpur"
+    ],
+    "cat": "paraphrase",
+    "pred": "IIT Kharagpur",
+    "latency": 0.26774048805236816,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Chennai is the capital of which state?",
+    "gold": [
+     "Tamil Nadu"
+    ],
+    "cat": "inverse",
+    "pred": "Tamil Nadu",
+    "latency": 0.282240629196167,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which company is led by Sundar Pichai?",
+    "gold": [
+     "Google"
+    ],
+    "cat": "inverse",
+    "pred": "Google",
+    "latency": 0.30263233184814453,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which organisation was founded by Vikram Sarabhai?",
+    "gold": [
+     "ISRO",
+     "Indian Space Research Organisation"
+    ],
+    "cat": "inverse",
+    "pred": "Indian Space Research Organisation",
+    "latency": 0.49988508224487305,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which state was Sundar Pichai born?",
+    "gold": [
+     "Tamil Nadu"
+    ],
+    "cat": "multi-hop",
+    "pred": "Tamil Nadu",
+    "latency": 0.2432231903076172,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which country is VIT University located?",
+    "gold": [
+     "India"
+    ],
+    "cat": "multi-hop",
+    "pred": "Tamil Nadu",
+    "latency": 0.27363038063049316,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "In which country was Albert Einstein born?",
+    "gold": [
+     "Germany"
+    ],
+    "cat": "multi-hop",
+    "pred": "Germany",
+    "latency": 0.5093140602111816,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which state is the headquarters of Infosys?",
+    "gold": [
+     "Karnataka"
+    ],
+    "cat": "multi-hop",
+    "pred": "Indian",
+    "latency": 0.2897982597351074,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "Who is the CEO of Gogle?",
+    "gold": [
+     "Sundar Pichai"
+    ],
+    "cat": "typo/alias",
+    "pred": null,
+    "latency": 0.18788433074951172,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "Where was Abdul Kalam born?",
+    "gold": [
+     "Rameswaram"
+    ],
+    "cat": "typo/alias",
+    "pred": "Rameswaram, Tamil Nadu",
+    "latency": 0.34943175315856934,
+    "em": 0.0,
+    "f1": 0.5
+   },
+   {
+    "q": "Where is Bangalore located?",
+    "gold": [
+     "Karnataka"
+    ],
+    "cat": "typo/alias",
+    "pred": "Karnataka",
+    "latency": 0.27501630783081055,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "How many Nobel Prizes did Marie Curie win?",
+    "gold": [
+     "two",
+     "2"
+    ],
+    "cat": "aggregation",
+    "pred": "two",
+    "latency": 0.3041214942932129,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "When did Chandrayaan-3 land on the Moon?",
+    "gold": [
+     "23 August 2023"
+    ],
+    "cat": "text-only",
+    "pred": "23 August 2023",
+    "latency": 0.48889923095703125,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Near which region of the Moon did Chandrayaan-3 land?",
+    "gold": [
+     "south pole",
+     "the south pole of the Moon"
+    ],
+    "cat": "text-only",
+    "pred": "south pole",
+    "latency": 0.41671228408813477,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "By what nickname is Abdul Kalam popularly known?",
+    "gold": [
+     "Missile Man of India",
+     "the Missile Man of India"
+    ],
+    "cat": "text-only",
+    "pred": "Missile Man of India",
+    "latency": 0.32880163192749023,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "When was Python released?",
+    "gold": [
+     "1991"
+    ],
+    "cat": "kb-only",
+    "pred": null,
+    "latency": 0.29616236686706543,
+    "em": 0.0,
+    "f1": 0.0
+   },
+   {
+    "q": "Who is the CEO of ISRO?",
+    "gold": [],
+    "cat": "unanswerable",
+    "pred": null,
+    "latency": 0.34313392639160156,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "What is the capital of Brazil?",
+    "gold": [],
+    "cat": "unanswerable",
+    "pred": null,
+    "latency": 0.254474401473999,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who founded Microsoft?",
+    "gold": [],
+    "cat": "unanswerable",
+    "pred": null,
+    "latency": 0.18384861946105957,
+    "em": 1.0,
+    "f1": 1.0
+   }
+  ],
+  "Hybrid (KB -> RoBERTa fallback)": [
+   {
+    "q": "What is the capital of India?",
+    "gold": [
+     "New Delhi"
+    ],
+    "cat": "simple",
+    "pred": "New Delhi",
+    "latency": 0.0010225772857666016,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who founded Infosys?",
+    "gold": [
+     "N. R. Narayana Murthy",
+     "Narayana Murthy"
+    ],
+    "cat": "simple",
+    "pred": "N. R. Narayana Murthy",
+    "latency": 0.00018453598022460938,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "When was IIT Madras founded?",
+    "gold": [
+     "1959"
+    ],
+    "cat": "simple",
+    "pred": "1959",
+    "latency": 0.0002734661102294922,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Where was Sundar Pichai born?",
+    "gold": [
+     "Madurai"
+    ],
+    "cat": "simple",
+    "pred": "Madurai",
+    "latency": 0.0002300739288330078,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who is the CEO of Google?",
+    "gold": [
+     "Sundar Pichai"
+    ],
+    "cat": "simple",
+    "pred": "Sundar Pichai",
+    "latency": 0.0002574920654296875,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "What is the currency of Japan?",
+    "gold": [
+     "Japanese Yen",
+     "Yen"
+    ],
+    "cat": "simple",
+    "pred": "Japanese Yen",
+    "latency": 0.00045037269592285156,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "What is C. V. Raman known for?",
+    "gold": [
+     "Raman effect",
+     "the discovery of the Raman effect"
+    ],
+    "cat": "simple",
+    "pred": "Raman effect",
+    "latency": 0.00024127960205078125,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who launched Chandrayaan-3?",
+    "gold": [
+     "ISRO",
+     "Indian Space Research Organisation"
+    ],
+    "cat": "simple",
+    "pred": "ISRO",
+    "latency": 0.0002117156982421875,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Where is ISRO headquartered?",
+    "gold": [
+     "Bengaluru",
+     "Bangalore"
+    ],
+    "cat": "simple",
+    "pred": "Bengaluru",
+    "latency": 0.0001761913299560547,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "When was A. P. J. Abdul Kalam born?",
+    "gold": [
+     "15 October 1931"
+    ],
+    "cat": "simple",
+    "pred": "15 October 1931",
+    "latency": 0.00030350685119628906,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which city serves as the capital of Tamil Nadu?",
+    "gold": [
+     "Chennai"
+    ],
+    "cat": "paraphrase",
+    "pred": "Chennai",
+    "latency": 0.0008208751678466797,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who is the founder of VIT University?",
+    "gold": [
+     "G. Viswanathan"
+    ],
+    "cat": "paraphrase",
+    "pred": "G. Viswanathan",
+    "latency": 0.00043582916259765625,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which year was Google established?",
+    "gold": [
+     "1998"
+    ],
+    "cat": "paraphrase",
+    "pred": "1998",
+    "latency": 0.00041174888610839844,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Tell me the birthplace of Marie Curie.",
+    "gold": [
+     "Warsaw"
+    ],
+    "cat": "paraphrase",
+    "pred": "Warsaw",
+    "latency": 0.0004448890686035156,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who heads Infosys as chief executive?",
+    "gold": [
+     "Salil Parekh"
+    ],
+    "cat": "paraphrase",
+    "pred": "Salil Parekh",
+    "latency": 0.0003807544708251953,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which institute did Sundar Pichai attend?",
+    "gold": [
+     "IIT Kharagpur"
+    ],
+    "cat": "paraphrase",
+    "pred": "IIT Kharagpur",
+    "latency": 0.0003666877746582031,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Chennai is the capital of which state?",
+    "gold": [
+     "Tamil Nadu"
+    ],
+    "cat": "inverse",
+    "pred": "Tamil Nadu",
+    "latency": 0.0005793571472167969,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which company is led by Sundar Pichai?",
+    "gold": [
+     "Google"
+    ],
+    "cat": "inverse",
+    "pred": "Google",
+    "latency": 0.0005419254302978516,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Which organisation was founded by Vikram Sarabhai?",
+    "gold": [
+     "ISRO",
+     "Indian Space Research Organisation"
+    ],
+    "cat": "inverse",
+    "pred": "ISRO",
+    "latency": 0.0008800029754638672,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which state was Sundar Pichai born?",
+    "gold": [
+     "Tamil Nadu"
+    ],
+    "cat": "multi-hop",
+    "pred": "Tamil Nadu",
+    "latency": 0.0005218982696533203,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which country is VIT University located?",
+    "gold": [
+     "India"
+    ],
+    "cat": "multi-hop",
+    "pred": "India",
+    "latency": 0.00046133995056152344,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which country was Albert Einstein born?",
+    "gold": [
+     "Germany"
+    ],
+    "cat": "multi-hop",
+    "pred": "Germany",
+    "latency": 0.0004246234893798828,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "In which state is the headquarters of Infosys?",
+    "gold": [
+     "Karnataka"
+    ],
+    "cat": "multi-hop",
+    "pred": "Karnataka",
+    "latency": 0.0006711483001708984,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who is the CEO of Gogle?",
+    "gold": [
+     "Sundar Pichai"
+    ],
+    "cat": "typo/alias",
+    "pred": "Sundar Pichai",
+    "latency": 0.00044345855712890625,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Where was Abdul Kalam born?",
+    "gold": [
+     "Rameswaram"
+    ],
+    "cat": "typo/alias",
+    "pred": "Rameswaram",
+    "latency": 0.0002841949462890625,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Where is Bangalore located?",
+    "gold": [
+     "Karnataka"
+    ],
+    "cat": "typo/alias",
+    "pred": "Karnataka",
+    "latency": 0.0002713203430175781,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "How many Nobel Prizes did Marie Curie win?",
+    "gold": [
+     "two",
+     "2"
+    ],
+    "cat": "aggregation",
+    "pred": "2",
+    "latency": 0.0007910728454589844,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "When did Chandrayaan-3 land on the Moon?",
+    "gold": [
+     "23 August 2023"
+    ],
+    "cat": "text-only",
+    "pred": "23 August 2023",
+    "latency": 0.5098235607147217,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Near which region of the Moon did Chandrayaan-3 land?",
+    "gold": [
+     "south pole",
+     "the south pole of the Moon"
+    ],
+    "cat": "text-only",
+    "pred": "south pole",
+    "latency": 0.4219396114349365,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "By what nickname is Abdul Kalam popularly known?",
+    "gold": [
+     "Missile Man of India",
+     "the Missile Man of India"
+    ],
+    "cat": "text-only",
+    "pred": "Missile Man of India",
+    "latency": 0.36298227310180664,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "When was Python released?",
+    "gold": [
+     "1991"
+    ],
+    "cat": "kb-only",
+    "pred": "1991",
+    "latency": 0.0004801750183105469,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who is the CEO of ISRO?",
+    "gold": [],
+    "cat": "unanswerable",
+    "pred": null,
+    "latency": 0.5044684410095215,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "What is the capital of Brazil?",
+    "gold": [],
+    "cat": "unanswerable",
+    "pred": null,
+    "latency": 0.1802833080291748,
+    "em": 1.0,
+    "f1": 1.0
+   },
+   {
+    "q": "Who founded Microsoft?",
+    "gold": [],
+    "cat": "unanswerable",
+    "pred": null,
+    "latency": 0.2798593044281006,
+    "em": 1.0,
+    "f1": 1.0
+   }
+  ]
+ }
+}
