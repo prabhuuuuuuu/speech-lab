@@ -1,5 +1,5 @@
 """
-Lab 6 (ii) - Deep-learning extractive QA with pre-trained Transformers (retriever + reader).
+Lab 7 (ii) - Deep-learning extractive QA with pre-trained Transformers (retriever + reader).
 
   Retriever : TF-IDF (uni+bi-grams) cosine similarity -> top-k passages
   Reader    : BERT-style model fine-tuned on SQuAD.  Input = [CLS] question [SEP] passage [SEP]

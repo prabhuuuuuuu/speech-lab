@@ -1,5 +1,5 @@
 """
-Lab 6 - Knowledge-Based vs Deep-Learning Question Answering
+Lab 7 - Knowledge-Based vs Deep-Learning Question Answering
 ===========================================================
 
  1. Construct a small knowledge base of factual triples (saved as JSON + graph picture)
@@ -147,7 +147,7 @@ def show_neural_answer(name, qa, q):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Lab 6 - knowledge-based vs deep-learning QA")
+    ap = argparse.ArgumentParser(description="Lab 7 - knowledge-based vs deep-learning QA")
     ap.add_argument("--ask", action="append", help="ask your own question (repeatable)")
     ap.add_argument("--interactive", action="store_true")
     ap.add_argument("--kb-only", action="store_true", help="skip the neural readers")

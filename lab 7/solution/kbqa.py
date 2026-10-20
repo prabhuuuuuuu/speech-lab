@@ -1,5 +1,5 @@
 """
-Lab 6 (i) - Knowledge-Based Question Answering over a triple store.
+Lab 7 (i) - Knowledge-Based Question Answering over a triple store.
 
 Pipeline (as in the lecture: question analysis -> query -> answer):
   1. Normalise the question.

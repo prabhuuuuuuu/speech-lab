@@ -1,5 +1,5 @@
 """
-Lab 6 - Knowledge base, text passages and evaluation questions.
+Lab 7 - Knowledge base, text passages and evaluation questions.
 
 KNOWLEDGE BASE  : structured facts stored as (subject, relation, object) triples,
                   plus an entity-type table and an alias table (for entity linking).
