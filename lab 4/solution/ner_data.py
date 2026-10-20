@@ -1,5 +1,5 @@
 """
-Lab 3 - Annotated dataset of voice-assistant speech-to-text transcripts.
+Lab 4 - Annotated dataset of voice-assistant speech-to-text transcripts.
 
 Each transcript is written exactly as an ASR engine (e.g. Google STT) would
 return it: no punctuation, numbers as digits, true-cased words.

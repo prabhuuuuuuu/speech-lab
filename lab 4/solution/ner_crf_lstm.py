@@ -1,5 +1,5 @@
 """
-Lab 3 - Named Entity Recognition for voice-assistant speech-to-text transcripts
+Lab 4 - Named Entity Recognition for voice-assistant speech-to-text transcripts
 ===============================================================================
 
 Entities: PERSON (PER), LOCATION (LOC), ORGANIZATION (ORG), DATE (DATE)
@@ -447,7 +447,7 @@ def transcribe_audio(path):
 # Main
 # =============================================================================
 def main():
-    ap = argparse.ArgumentParser(description="Lab 3 - CRF vs LSTM NER for speech transcripts")
+    ap = argparse.ArgumentParser(description="Lab 4 - CRF vs LSTM NER for speech transcripts")
     ap.add_argument("--text", help="extra transcript to tag with both models")
     ap.add_argument("--audio", help="WAV/FLAC file to transcribe (Google STT) and tag")
     ap.add_argument("--epochs", type=int, default=60, help="BiLSTM epochs")
@@ -630,7 +630,7 @@ Interpretation:
     independently, so it can emit inconsistent BIO sequences or confuse ORG/LOC when
     the context ('at', 'in', 'from') is shared by both types.
   * With so little training data, feature engineering + structured decoding (CRF)
-    usually generalises better; with thousands of sentences (see Lab 4) the neural
+    usually generalises better; with thousands of sentences (see Lab 5) the neural
     model catches up and typically overtakes the CRF.""")
 
     # ------------------------------------------------------------------ Task 9
