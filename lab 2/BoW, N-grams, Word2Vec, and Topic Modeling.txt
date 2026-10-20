@@ -1,0 +1,50 @@
+Use the Amazon Fine Food Reviews, Flipkart Product Reviews, or any review dataset containing 1000–3000 reviews.
+
+Part A (BoW Analysis)
+
+1. Clean the reviews.
+
+2. Remove stop words.
+
+3. Apply stemming/lemmatization.
+
+4. Generate Bag-of-Words matrix.
+
+5. Find
+
+a) Top 20 frequent words
+
+b) Vocabulary size
+
+c) Sparsity of matrix
+
+Part B (N-gram Analysis)
+
+1. Generate
+
+a) Unigrams
+
+b) Bigrams
+
+c) Trigrams
+
+2. Identify
+
+a) Top 15 bigrams
+
+b) Top 10 trigrams
+
+Part C (Word2Vec)
+
+Train a CBOW Word2Vec model.
+
+Part D (Topic Modeling)
+
+1. Apply
+
+a) Latent Dirichlet Allocation (LDA)
+
+2. Generate
+
+a) 5 Topics
+

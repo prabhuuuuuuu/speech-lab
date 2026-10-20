@@ -1,0 +1,734 @@
+{
+  "dataset": "synthetic review corpus (2000 reviews)",
+  "synthetic": true,
+  "reviews": 2000,
+  "normalisation": "WordNet lemmatization (POS-aware)",
+  "stop_words": 335,
+  "domain_stop_words": [
+    "amazon",
+    "flipkart",
+    "item",
+    "order",
+    "pack",
+    "packet",
+    "product",
+    "seller"
+  ],
+  "token_count": 36859,
+  "tokens_per_review": 18.4295,
+  "part_a": {
+    "vocabulary_size": 312,
+    "matrix_shape": [
+      2000,
+      312
+    ],
+    "non_zero_cells": 31198,
+    "sparsity": 0.9500032051282051,
+    "top_words": [
+      [
+        "flavour",
+        1436
+      ],
+      [
+        "fresh",
+        743
+      ],
+      [
+        "kitchen",
+        656
+      ],
+      [
+        "tea",
+        650
+      ],
+      [
+        "chocolate",
+        612
+      ],
+      [
+        "aroma",
+        534
+      ],
+      [
+        "value",
+        517
+      ],
+      [
+        "taste",
+        512
+      ],
+      [
+        "balance",
+        503
+      ],
+      [
+        "exactly",
+        490
+      ],
+      [
+        "coffee",
+        452
+      ],
+      [
+        "poor",
+        441
+      ],
+      [
+        "money",
+        430
+      ],
+      [
+        "price",
+        430
+      ],
+      [
+        "quality",
+        422
+      ],
+      [
+        "open",
+        363
+      ],
+      [
+        "spice",
+        357
+      ],
+      [
+        "good",
+        340
+      ],
+      [
+        "long",
+        340
+      ],
+      [
+        "strength",
+        322
+      ]
+    ]
+  },
+  "part_b": {
+    "unique_unigrams": 312,
+    "unique_bigrams": 4560,
+    "unique_trigrams": 12636,
+    "top_bigrams": [
+      [
+        "value money",
+        430
+      ],
+      [
+        "flavour balance",
+        414
+      ],
+      [
+        "quality consistent",
+        302
+      ],
+      [
+        "repeat purchase",
+        302
+      ],
+      [
+        "purchase kitchen",
+        302
+      ],
+      [
+        "guest ask",
+        285
+      ],
+      [
+        "flavour poor",
+        281
+      ],
+      [
+        "good value",
+        270
+      ],
+      [
+        "content fresh",
+        245
+      ],
+      [
+        "home long",
+        243
+      ],
+      [
+        "shopping list",
+        217
+      ],
+      [
+        "weekly shopping",
+        217
+      ],
+      [
+        "soon open",
+        197
+      ],
+      [
+        "regret buying",
+        174
+      ],
+      [
+        "description label",
+        171
+      ]
+    ],
+    "top_trigrams": [
+      [
+        "repeat purchase kitchen",
+        302
+      ],
+      [
+        "good value money",
+        270
+      ],
+      [
+        "weekly shopping list",
+        217
+      ],
+      [
+        "taste description label",
+        170
+      ],
+      [
+        "poor value money",
+        160
+      ],
+      [
+        "receive tasted previous",
+        138
+      ],
+      [
+        "batch receive tasted",
+        138
+      ],
+      [
+        "guest ask flavour",
+        93
+      ],
+      [
+        "shopping list flavour",
+        81
+      ],
+      [
+        "list flavour balance",
+        72
+      ]
+    ]
+  },
+  "part_c": {
+    "architecture": "CBOW",
+    "vector_size": 100,
+    "window": 5,
+    "min_count": 3,
+    "epochs": 30,
+    "vocabulary_size": 305,
+    "nearest_neighbours": {
+      "coffee": [
+        [
+          "bold",
+          0.736976
+        ],
+        [
+          "body",
+          0.726786
+        ],
+        [
+          "mellow",
+          0.71341
+        ],
+        [
+          "robust",
+          0.707432
+        ],
+        [
+          "crema",
+          0.687905
+        ],
+        [
+          "watery",
+          0.667134
+        ]
+      ],
+      "tea": [
+        [
+          "fragrance",
+          0.809618
+        ],
+        [
+          "leaf",
+          0.797743
+        ],
+        [
+          "delicate",
+          0.787752
+        ],
+        [
+          "infusion",
+          0.770266
+        ],
+        [
+          "floral",
+          0.764809
+        ],
+        [
+          "artificial",
+          0.693461
+        ]
+      ],
+      "chocolate": [
+        [
+          "melt",
+          0.786206
+        ],
+        [
+          "dark",
+          0.7674
+        ],
+        [
+          "velvety",
+          0.760962
+        ],
+        [
+          "snap",
+          0.754413
+        ],
+        [
+          "creamy",
+          0.743411
+        ],
+        [
+          "sweetness",
+          0.730989
+        ]
+      ],
+      "snack": [
+        [
+          "handy",
+          0.77345
+        ],
+        [
+          "oiliness",
+          0.770929
+        ],
+        [
+          "flavourful",
+          0.754533
+        ],
+        [
+          "spicy",
+          0.754245
+        ],
+        [
+          "office",
+          0.737244
+        ],
+        [
+          "crunch",
+          0.718764
+        ]
+      ],
+      "spice": [
+        [
+          "freshness",
+          0.792965
+        ],
+        [
+          "authentic",
+          0.647294
+        ],
+        [
+          "purity",
+          0.628088
+        ],
+        [
+          "free",
+          0.624832
+        ],
+        [
+          "vibrant",
+          0.604488
+        ],
+        [
+          "strong",
+          0.604096
+        ]
+      ],
+      "fresh": [
+        [
+          "balanced",
+          0.630904
+        ],
+        [
+          "balance",
+          0.547173
+        ],
+        [
+          "clean",
+          0.527399
+        ],
+        [
+          "content",
+          0.509516
+        ],
+        [
+          "authentic",
+          0.484221
+        ],
+        [
+          "secure",
+          0.47978
+        ]
+      ],
+      "packaging": [
+        [
+          "package",
+          0.777876
+        ],
+        [
+          "content",
+          0.642408
+        ],
+        [
+          "secure",
+          0.483497
+        ],
+        [
+          "properly",
+          0.470114
+        ],
+        [
+          "neat",
+          0.467782
+        ],
+        [
+          "outer",
+          0.467445
+        ]
+      ],
+      "quality": [
+        [
+          "hesitation",
+          0.320631
+        ],
+        [
+          "package",
+          0.300838
+        ],
+        [
+          "recommend",
+          0.264319
+        ],
+        [
+          "properly",
+          0.262132
+        ],
+        [
+          "price",
+          0.253102
+        ],
+        [
+          "content",
+          0.246926
+        ]
+      ],
+      "price": [
+        [
+          "money",
+          0.883844
+        ],
+        [
+          "value",
+          0.808968
+        ],
+        [
+          "good",
+          0.720734
+        ],
+        [
+          "family",
+          0.559162
+        ],
+        [
+          "large",
+          0.550041
+        ],
+        [
+          "gram",
+          0.545918
+        ]
+      ],
+      "recommend": [
+        [
+          "bin",
+          0.717665
+        ],
+        [
+          "grit",
+          0.592425
+        ],
+        [
+          "hard",
+          0.586041
+        ],
+        [
+          "lump",
+          0.571621
+        ],
+        [
+          "contain",
+          0.563162
+        ],
+        [
+          "stone",
+          0.556
+        ]
+      ]
+    }
+  },
+  "part_d": {
+    "num_topics": 5,
+    "coherence_c_v": 0.43693539485743027,
+    "topics": [
+      {
+        "topic": 0,
+        "terms": [
+          [
+            "kitchen",
+            0.03222
+          ],
+          [
+            "fresh",
+            0.031284
+          ],
+          [
+            "tea",
+            0.030123
+          ],
+          [
+            "balance",
+            0.021695
+          ],
+          [
+            "exactly",
+            0.021688
+          ],
+          [
+            "long",
+            0.017264
+          ],
+          [
+            "coffee",
+            0.017225
+          ],
+          [
+            "aroma",
+            0.01616
+          ],
+          [
+            "good",
+            0.014901
+          ],
+          [
+            "spice",
+            0.014884
+          ]
+        ]
+      },
+      {
+        "topic": 1,
+        "terms": [
+          [
+            "chocolate",
+            0.093304
+          ],
+          [
+            "melt",
+            0.042841
+          ],
+          [
+            "cocoa",
+            0.039823
+          ],
+          [
+            "dark",
+            0.024582
+          ],
+          [
+            "sweetness",
+            0.024556
+          ],
+          [
+            "fresh",
+            0.023288
+          ],
+          [
+            "bar",
+            0.022876
+          ],
+          [
+            "snap",
+            0.02277
+          ],
+          [
+            "truffle",
+            0.020595
+          ],
+          [
+            "sweet",
+            0.019452
+          ]
+        ]
+      },
+      {
+        "topic": 2,
+        "terms": [
+          [
+            "fresh",
+            0.025171
+          ],
+          [
+            "taste",
+            0.023211
+          ],
+          [
+            "crunch",
+            0.022618
+          ],
+          [
+            "chip",
+            0.022489
+          ],
+          [
+            "snack",
+            0.021216
+          ],
+          [
+            "value",
+            0.020504
+          ],
+          [
+            "texture",
+            0.019717
+          ],
+          [
+            "crunchy",
+            0.019133
+          ],
+          [
+            "roast",
+            0.018529
+          ],
+          [
+            "spice",
+            0.017298
+          ]
+        ]
+      },
+      {
+        "topic": 3,
+        "terms": [
+          [
+            "coffee",
+            0.053623
+          ],
+          [
+            "weekly",
+            0.035437
+          ],
+          [
+            "list",
+            0.035434
+          ],
+          [
+            "add",
+            0.035023
+          ],
+          [
+            "shopping",
+            0.031693
+          ],
+          [
+            "roast",
+            0.024802
+          ],
+          [
+            "stale",
+            0.022463
+          ],
+          [
+            "bean",
+            0.019875
+          ],
+          [
+            "broken",
+            0.018281
+          ],
+          [
+            "mix",
+            0.015396
+          ]
+        ]
+      },
+      {
+        "topic": 4,
+        "terms": [
+          [
+            "tea",
+            0.036081
+          ],
+          [
+            "poor",
+            0.034423
+          ],
+          [
+            "taste",
+            0.028922
+          ],
+          [
+            "aroma",
+            0.024427
+          ],
+          [
+            "stale",
+            0.022374
+          ],
+          [
+            "bitter",
+            0.021942
+          ],
+          [
+            "new",
+            0.021753
+          ],
+          [
+            "smell",
+            0.02096
+          ],
+          [
+            "colour",
+            0.019418
+          ],
+          [
+            "label",
+            0.018031
+          ]
+        ]
+      }
+    ],
+    "dominant_topic_counts": {
+      "0": 713,
+      "1": 380,
+      "2": 364,
+      "3": 124,
+      "4": 419
+    },
+    "example_reviews": {
+      "0": "I keep the turmeric powder in the kitchen because the purity is fragrant. The flavour is well balanced and the purity is fragrant. The spices tasted fresh and the flavour was authentic. The quality has been consistent across orders. I would buy this again without hesitation.",
+      "1": "The cocoa nibs had a sugary texture. The flavour was poor and the texture was sugary. It tasted waxy and left a strange coating in my mouth. The packaging was damaged and the product looked old. Most of the pack went into the bin.",
+      "2": "I noticed a light spice in the roasted nuts. The flavour is well balanced and the flavour is light. The pack stayed fresh for a week after opening because of the zip lock. I would buy this again without hesitation.",
+      "3": "I could not finish the instant coffee because the crema was bitter. The flavour was poor and the crema was bitter. The vacuum seal was broken and the coffee had gone stale. I would not recommend this to anyone.",
+      "4": "The lemon tea smelled bitter as soon as the pack was opened. The leaf was bitter and the aftertaste was harsh. The leaves were mostly dust and the infusion turned cloudy. The packaging was torn and the product looked old. For this price the large pack is poor value for money."
+    }
+  }
+}
