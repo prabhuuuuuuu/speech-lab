@@ -1,5 +1,5 @@
 """
-Lab 5 (d) - ROUGE-1, ROUGE-2 and ROUGE-L (implemented from scratch).
+Lab 6 (d) - ROUGE-1, ROUGE-2 and ROUGE-L (implemented from scratch).
 
     ROUGE-N  : clipped n-gram overlap.   P = overlap / #ngrams(candidate)
                                           R = overlap / #ngrams(reference)

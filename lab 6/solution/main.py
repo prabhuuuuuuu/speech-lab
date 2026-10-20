@@ -1,5 +1,5 @@
 """
-Lab 5 - Text Summarisation of student-feedback reports
+Lab 6 - Text Summarisation of student-feedback reports
 =======================================================
 
  a) Pre-processing         : unnecessary-text removal, sentence segmentation, tokenisation
@@ -47,7 +47,7 @@ def short(s, n=95):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Lab 5 - extractive & abstractive summarisation + ROUGE")
+    ap = argparse.ArgumentParser(description="Lab 6 - extractive & abstractive summarisation + ROUGE")
     ap.add_argument("--input", default=os.path.join(HERE, "data", "student_feedback.txt"))
     ap.add_argument("--reference", default=os.path.join(HERE, "data", "reference_summary.txt"))
     ap.add_argument("--k", type=int, default=None, help="sentences in extractive summaries "

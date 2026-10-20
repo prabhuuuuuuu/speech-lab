@@ -1,5 +1,5 @@
 """
-Lab 5 (c) 6-9 - Pre-trained Transformer summarisers (Hugging Face transformers).
+Lab 6 (c) 6-9 - Pre-trained Transformer summarisers (Hugging Face transformers).
 
   6. BERT extractive : BERT sentence embeddings (mean pooling) -> K-Means with k clusters ->
                        the sentence closest to every centroid is selected (Miller, 2019).

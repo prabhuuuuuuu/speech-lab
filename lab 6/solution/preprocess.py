@@ -1,5 +1,5 @@
 """
-Lab 5 (a) - Pre-processing of the student-feedback document.
+Lab 6 (a) - Pre-processing of the student-feedback document.
 
   * removal of unnecessary text : report headers / metadata lines ("Report ID: ..."),
     separator lines, page numbers, bracketed editorial notes, URLs, e-mail

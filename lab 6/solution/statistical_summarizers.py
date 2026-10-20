@@ -1,5 +1,5 @@
 """
-Lab 5 (b) - Graph / statistical extractive summarisers (implemented from scratch).
+Lab 6 (b) - Graph / statistical extractive summarisers (implemented from scratch).
 
 Every summariser takes the pre-processed Document and the number of sentences k
 and returns (selected_indices_in_document_order, score_per_sentence).

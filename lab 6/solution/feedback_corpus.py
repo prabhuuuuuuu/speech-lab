@@ -1,5 +1,5 @@
 """
-Lab 5 - Small synthetic in-domain training corpus for the deep-learning models
+Lab 6 - Small synthetic in-domain training corpus for the deep-learning models
 that are trained FROM SCRATCH (RNN, LSTM, Seq2Seq, self-attention, Transformer).
 
 Neural summarisers cannot learn anything from a single document, so we generate

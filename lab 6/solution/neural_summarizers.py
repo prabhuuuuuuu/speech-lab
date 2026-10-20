@@ -1,5 +1,5 @@
 """
-Lab 5 (c) 1-5 - Deep-learning summarisers trained FROM SCRATCH (PyTorch).
+Lab 6 (c) 1-5 - Deep-learning summarisers trained FROM SCRATCH (PyTorch).
 
   Extractive (score every sentence, pick the top-k):
     RNN extractor            hierarchical vanilla RNN : words -> sentence vector -> document RNN
