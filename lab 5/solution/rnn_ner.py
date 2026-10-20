@@ -1,5 +1,5 @@
 """
-Lab 4 - RNN-based Named Entity Recognition
+Lab 5 - RNN-based Named Entity Recognition
 ==========================================
 
 Design, implement and evaluate a Recurrent-Neural-Network NER system and
@@ -362,7 +362,7 @@ def fmt(x):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Lab 4 - RNN-based NER with model/preprocessing analysis")
+    ap = argparse.ArgumentParser(description="Lab 5 - RNN-based NER with model/preprocessing analysis")
     ap.add_argument("--quick", action="store_true", help="smaller dataset and fewer epochs")
     ap.add_argument("--epochs", type=int, default=None)
     ap.add_argument("--seed", type=int, default=7, help="random seed for model initialisation")

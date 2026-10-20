@@ -1,5 +1,5 @@
 """
-Lab 4 - Dataset utilities for RNN-based NER.
+Lab 5 - Dataset utilities for RNN-based NER.
 
 Two data sources are supported:
 
