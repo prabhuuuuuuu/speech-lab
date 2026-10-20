@@ -1,0 +1,8 @@
+Load and preprocess a speech signal.
+Perform framing and windowing.
+Extract MFCC features.
+Extract PLP features using perceptual auditory processing.
+Estimate LPC coefficients and derive LPCC features.
+Extract GFCC features using a gammatone filterbank.
+Visualize and compare the feature representations.
+Analyze the suitability of each feature for speech-recognition applications.
