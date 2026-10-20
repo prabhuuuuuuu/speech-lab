@@ -1,13 +1,16 @@
-# Speech & NLP Lab - Labs 1 to 6
+# Speech & NLP Lab - Labs 1 to 9
 
 | Lab | Topic | Solution folder | Main script |
 |---|---|---|---|
 | 1 | POS tagging, parsing, Bag of Words (text + speech) | `lab 1/solution/POS, parser and BOW/1) POS, parser and BoW/` | `pos_tagging.py`, `parsing.py`, `bow.py`, `HOC.py` |
-| 2 | Word embeddings: Word2Vec, GloVe, FastText | `lab 2/solution/3) Word Embeddings (W2Vec, Glove, Fasttext)/3) Word Embeddings (W2Vec, Glove, Fasttext)/` | `main.py` |
-| 3 | NER for speech transcripts: BIO, CRF + Viterbi, LSTM | `lab 3/solution/` | `ner_crf_lstm.py` |
-| 4 | RNN-based NER + model/preprocessing analysis | `lab 4/solution/` | `rnn_ner.py` |
-| 5 | Text summarisation (statistical, neural, pre-trained) + ROUGE | `lab 5/solution/` | `main.py` |
-| 6 | Knowledge-based vs deep-learning question answering | `lab 6/solution/` | `qa_system.py` |
+| 2 | BoW, n-grams, CBOW Word2Vec, LDA topic modeling | `lab 2/solution/` | `main.py` |
+| 3 | Word embeddings: Word2Vec, GloVe, FastText | `lab 3/solution/3) Word Embeddings (W2Vec, Glove, Fasttext)/3) Word Embeddings (W2Vec, Glove, Fasttext)/` | `main.py` |
+| 4 | NER for speech transcripts: BIO, CRF + Viterbi, LSTM | `lab 4/solution/` | `ner_crf_lstm.py` |
+| 5 | RNN-based NER + model/preprocessing analysis | `lab 5/solution/` | `rnn_ner.py` |
+| 6 | Text summarisation (statistical, neural, pre-trained) + ROUGE | `lab 6/solution/` | `main.py` |
+| 7 | Knowledge-based vs deep-learning question answering | `lab 7/solution/` | `qa_system.py` |
+| 8 | MFCC, PLP, LPCC and GFCC feature extraction and comparison | `lab 8/solution/` | `feature_extraction.py` |
+| 9 | CNN-based speech recognition from mel-spectral images | `lab 9/solution/` | `asr_cnn.py` |
 
 ---
 
@@ -20,16 +23,18 @@ python -m venv .venv
 .\.venv\Scripts\Activate.ps1          # if blocked: Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
-python -c "import nltk; [nltk.download(p) for p in ['punkt','punkt_tab','averaged_perceptron_tagger','averaged_perceptron_tagger_eng','maxent_ne_chunker','maxent_ne_chunker_tab','words']]"
+python -c "import nltk; [nltk.download(p) for p in ['punkt','punkt_tab','averaged_perceptron_tagger','averaged_perceptron_tagger_eng','maxent_ne_chunker','maxent_ne_chunker_tab','words','wordnet','omw-1.4']]"
 ```
 
 (macOS / Linux: `python3 -m venv .venv` and `source .venv/bin/activate`.)
 
 Notes
 * No GPU is needed; everything runs on CPU.
-* Labs 5 and 6 download pre-trained models from Hugging Face **the first time** they run
+* Labs 6 and 7 download pre-trained models from Hugging Face **the first time** they run
   (internet required, about 5 GB in total, cached in `%USERPROFILE%\.cache\huggingface`). Later runs work offline.
 * Folder names contain spaces - always wrap paths in quotes when you `cd`.
+* `notebooks/` contains step-by-step Jupyter walkthroughs for most labs. They only read the
+  solution code; their outputs go to `notebooks/lab*_outputs/`.
 
 ---
 
@@ -44,17 +49,44 @@ python parsing.py "The inventor built an incredibly fast car."       # B) depend
 python parsing.py harvard.wav
 python bow.py                                                         # C) vocabulary + BoW vectors (binary, skip-gram)
 python code2.py                                                       # C) BoW built by hand
-python HOC.py "The aeroplane flies in the blue sky"                   # E) word order changed -> POS, parse, BoW again
+python HOC.py "The aeroplane flies in the blue sky"                  # E) word order changed -> POS, parse, BoW again
 echo "Your paragraph here." | python code.py                         # full pipeline from stdin (+ text-to-speech output.mp3)
 ```
 
 D) The written analysis is in `task_d_analysis.md`.
 If speech recognition has no internet, `utils.py` falls back to the Harvard-sentences text.
 
-## Lab 2 - Word2Vec, GloVe, FastText
+## Lab 2 - BoW, n-grams, Word2Vec (CBOW) and topic modeling
 
 ```powershell
-cd "lab 2\solution\3) Word Embeddings (W2Vec, Glove, Fasttext)\3) Word Embeddings (W2Vec, Glove, Fasttext)"
+cd "lab 2\solution"
+python main.py                                          # synthetic 2,000-review corpus, ~30 s
+python main.py --csv Reviews.csv --text-column Text     # real Amazon / Flipkart / other review file
+python main.py --json reviews.json --reviews 1500       # JSON list of strings or objects
+python main.py --topics 5 --save-model                  # also save the CBOW model
+```
+
+| Part | Implementation |
+|---|---|
+| A) BoW | lower-casing, HTML/URL/e-mail/punctuation removal, contraction expansion, stop words, POS-aware WordNet lemmatization (falls back to Porter stemming); CountVectorizer matrix, top 20 words, vocabulary size, sparsity |
+| B) N-grams | unigram, bigram and trigram matrices; top 15 bigrams and top 10 trigrams |
+| C) Word2Vec | CBOW model (`sg=0`, gensim); vector sample and nearest neighbours for category words |
+| D) Topic modeling | LDA (gensim, `--topics 5`); top words per topic, dominant topic per review, c_v coherence, example review per topic |
+
+The default corpus is a deterministic set of 2,000 product reviews (`review_data.py`) across
+coffee, tea, chocolate, snacks and spices, because the full Amazon Fine Food / Flipkart files
+are not bundled with the repo. Any 1,000-3,000-review CSV/JSON file can be passed instead with
+`--csv` / `--json` (the text column is auto-detected or set with `--text-column`).
+
+Outputs in `outputs/`: `report.md`, `bow_summary.json`, `top_words.csv`, `top_bigrams.csv`,
+`top_trigrams.csv`, `lda_topics.csv`, `review_corpus.csv`, `lab2_overview.png`.
+Typical result: 2,000 reviews, vocabulary about 300 words, BoW sparsity about 95 %,
+LDA coherence (c_v) about 0.40-0.45.
+
+## Lab 3 - Word2Vec, GloVe, FastText
+
+```powershell
+cd "lab 3\solution\3) Word Embeddings (W2Vec, Glove, Fasttext)\3) Word Embeddings (W2Vec, Glove, Fasttext)"
 python main.py
 ```
 
@@ -62,10 +94,10 @@ Uses `corpus.txt` (must be in the current folder). Prints Parts A-E (CBOW / Skip
 windows 2 and 4, GloVe from a co-occurrence matrix, FastText on unseen `machine-learning`, the
 cosine-similarity table) and opens the PCA plot (Part F) - close the plot window to finish.
 
-## Lab 3 - NER for voice-assistant transcripts (CRF + Viterbi vs LSTM)
+## Lab 4 - NER for voice-assistant transcripts (CRF + Viterbi vs LSTM)
 
 ```powershell
-cd "lab 3\solution"
+cd "lab 4\solution"
 python ner_crf_lstm.py                                       # all 9 tasks, ~1-2 min
 python ner_crf_lstm.py --text "call Ravi Kumar from Infosys in Pune on 3 March"
 python ner_crf_lstm.py --audio my_command.wav                # transcribe a WAV with Google STT, then tag it
@@ -85,10 +117,10 @@ python ner_crf_lstm.py --audio my_command.wav                # transcribe a WAV 
 
 Typical result: CRF F1 approx. 0.94, BiLSTM approx. 0.88 (the CRF wins on 60 sentences; it drops much more on lower-cased text).
 
-## Lab 4 - RNN-based NER
+## Lab 5 - RNN-based NER
 
 ```powershell
-cd "lab 4\solution"
+cd "lab 5\solution"
 python rnn_ner.py --quick                     # small run, a few minutes
 python rnn_ner.py                             # full run: 15 configurations (~20-30 min on CPU)
 python rnn_ner.py --text "Sundar Pichai visited Chennai on 5 March 2027"
@@ -105,10 +137,10 @@ python rnn_ner.py --conll-train train.txt --conll-dev valid.txt --conll-test tes
 * Outputs: `results/experiments.csv`, `results/experiments.png`.
   Typical full-run result: plain BiLSTM approx. 0.88 F1 -> full pipeline approx. 0.94-0.95 F1.
 
-## Lab 5 - Text summarisation of student feedback
+## Lab 6 - Text summarisation of student feedback
 
 ```powershell
-cd "lab 5\solution"
+cd "lab 6\solution"
 python main.py --skip-neural --skip-pretrained    # (a) + (b) + (d) only - seconds, offline
 python main.py --skip-pretrained                  # + from-scratch RNN/LSTM/Seq2Seq/attention/Transformer (~8 min)
 python main.py                                    # everything incl. BERT, BART, PEGASUS, T5 (~15 min on CPU,
@@ -130,10 +162,10 @@ Outputs: `outputs/summaries.md`, `outputs/rouge_scores.csv`, `outputs/rouge_char
 Read the "CAUTION" note printed at the end: the from-scratch abstractive models were trained on targets
 written in the same style as the reference, so their high ROUGE partly reflects that shared wording.
 
-## Lab 6 - Knowledge-based vs deep-learning QA
+## Lab 7 - Knowledge-based vs deep-learning QA
 
 ```powershell
-cd "lab 6\solution"
+cd "lab 7\solution"
 python qa_system.py --kb-only                         # knowledge-based part only (no downloads)
 python qa_system.py                                   # KB + DistilBERT + RoBERTa + hybrid, full evaluation
 python qa_system.py --ask "Where was Sundar Pichai born?" --ask "Who runs Google?"
@@ -153,6 +185,42 @@ python qa_system.py --interactive
   abstention accuracy, latency, per-category EM. Results in `outputs/qa_results.json`.
   Typical: KB EM 0.91, DistilBERT 0.56, RoBERTa 0.76, hybrid 1.00.
 
+## Lab 8 - MFCC, PLP, LPCC and GFCC feature extraction
+
+```powershell
+cd "lab 8\solution"
+python feature_extraction.py                                  # lab 1 harvard.wav if found, else synthetic
+python feature_extraction.py --wav my.wav --start 0.5 --duration 3.0
+python feature_extraction.py --synthetic                      # no audio file needed
+```
+
+* Pre-emphasis, framing (25 ms / 10 ms), Hamming window, FFT.
+* **MFCC** (Mel filterbank -> log -> DCT-II), **PLP** (Bark bands, equal-loudness pre-emphasis,
+  cube-root loudness, LPC order 5, cepstral recursion), **LPCC** (autocorrelation LPC order 12,
+  Levinson-Durbin), **GFCC** (gammatone filterbank, cube-root compression, DCT-II) - all from scratch in NumPy/SciPy.
+* Compares the four representations, their statistics and their robustness to 10 dB white noise
+  (clean-vs-noisy cosine similarity).
+* Outputs in `results/`: `feature_comparison.png`, `filterbanks.png`, `feature_stats.csv`, `robustness.csv`.
+
+## Lab 9 - CNN-based speech recognition from mel-spectral images
+
+```powershell
+cd "lab 9\solution"
+python asr_cnn.py --quick             # tiny run for a fast check (~1 min)
+python asr_cnn.py                     # full run: 80 speakers, 20 epochs
+python asr_cnn.py --predict my_digit.wav
+```
+
+* Dataset: synthetic spoken digits (zero..nine) with speaker-disjoint train / dev / test splits,
+  or a real folder of WAVs with `--data-dir`; built by `speech_commands.py`.
+* Front-end: log-mel spectrogram images (64 mels x 64 frames, 0.8 s clips), computed from scratch.
+* Models: a small VGG-style CNN (~190 k parameters) and an MLP baseline over the flattened image,
+  trained with the same optimiser and schedule.
+* Evaluation: test accuracy, per-class precision/recall/F1, confusion matrix, an accuracy-vs-SNR
+  robustness sweep and misclassified examples.
+* Outputs in `results/`: `metrics.json`, `model.pt`, `mel_images.png`, `training_curves.png`,
+  `confusion_matrix.png`, `accuracy_vs_snr.png`, `misclassified.png`.
+
 ---
 
 ## Troubleshooting
@@ -161,7 +229,9 @@ python qa_system.py --interactive
 |---|---|
 | `OSError: Can't find model 'en_core_web_sm'` | `python -m spacy download en_core_web_sm` |
 | NLTK `LookupError: Resource punkt ... not found` | run the `nltk.download` line from the setup section |
-| Hugging Face download fails / is slow | check internet; the first run of Labs 5 and 6 needs it. Lab 5 skips a failed model and continues |
-| Lab 5 too slow | `--skip-pretrained`, or `--epochs 4 --train-docs 100` |
+| Lab 2 lemmatizer falls back to a stemmer | run `python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')"` |
+| Lab 2 `--csv` cannot find the text column | check the header and pass `--text-column <name>` |
+| Hugging Face download fails / is slow | check internet; the first run of Labs 6 and 7 needs it. Lab 6 skips a failed model and continues |
+| Lab 6 too slow | `--skip-pretrained`, or `--epochs 4 --train-docs 100` |
 | `UnicodeEncodeError` in the console | `$env:PYTHONIOENCODING="utf-8"` before running |
-| Lab 1 `ner_system.py` needs TensorFlow | that older NER script is superseded by Lab 3 (PyTorch); install `tensorflow` only if you want to run it |
+| Lab 1 `ner_system.py` needs TensorFlow | that older NER script is superseded by Lab 4 (PyTorch); install `tensorflow` only if you want to run it |
