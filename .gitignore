@@ -6,6 +6,9 @@ venv/
 __pycache__/
 *.pyc
 
+# Jupyter checkpoint copies
+.ipynb_checkpoints/
+
 # Secrets / local env
 .env
 .env.*
